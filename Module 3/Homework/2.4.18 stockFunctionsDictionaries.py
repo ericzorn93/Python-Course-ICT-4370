@@ -95,34 +95,11 @@ if earnings_losses == []:
     # print(earnings_losses)
 
 
-def constructTable(title, stock_symbol, purchase_price, current_price, earning_loss):
-    print(title, stock_symbol, purchase_price, current_price, earning_loss)
-
-# constructTable(titles[0], stock_symbols[0], purchase_prices[0], current_prices[0], earnings_losses[0])
-
 
 """ BUILD TABLE OF DATE """
 
 # PRINT TITLES
 print("\n\n")
-
-# PRINT STOCK SYMBOLS
-"""
-def constructTable(table_titles, stock_symbol, number_of_shares, current_price, purchase_price):
-
-    for i in table_titles:
-        print(i)
-
-    for i in stock_symbol:
-        print(i, end=' ')
-
-    for i in number_of_shares:
-        print(i, end=' ')
-
-
-
-constructTable(titles, stock_symbols, number_shares, current_prices, purchase_prices)
-"""
 
 
 # Nest all titles, symbols, shares, prices, and earnings/losses into a nested list
@@ -139,20 +116,20 @@ stock_list = [
 print("Stock Ownership Portfolio for {0}".format(names[0]) + "\n")
 
 print(titles[0] + "\t" + titles[1] + "\t" + titles[2] + "\t" + titles[3] + "\t" + titles[4])
-print("--------------------------------------------------------------------------------")
+print("------------------------------------------------------------------------------------")
+print(str(stock_list[1][0]), "\t", str(stock_list[2][0]), "\t\t", str(stock_list[3][0]), "\t\t", str(stock_list[4][0]), "\t\t", str(stock_list[5][0]))
+print(str(stock_list[1][1]), "\t", str(stock_list[2][1]), "\t\t", str(stock_list[3][1]), "\t\t", str(stock_list[4][1]), "\t\t", str(stock_list[5][1]))
+print(str(stock_list[1][2]), "\t", str(stock_list[2][2]), "\t\t", str(stock_list[3][2]), "\t\t", str(stock_list[4][2]), "\t\t", str(stock_list[5][2]))
+print(str(stock_list[1][3]), "\t", str(stock_list[2][3]), "\t\t", str(stock_list[3][3]), "\t\t", str(stock_list[4][3]), "\t\t", str(stock_list[5][3]))
+print(str(stock_list[1][4]), "\t", str(stock_list[2][4]), "\t\t", str(stock_list[3][4]), "\t\t", str(stock_list[4][4]), "\t\t", str(stock_list[5][4]))
 
-for i in stock_list:
-    counter = 0
-    title = titles[counter]
-    stock_symbol = str(stock_symbols[counter])
-    share_number = str(number_shares[counter])
-    purchase_price = str(purchase_prices[counter])
-    current_price = str(current_prices[counter])
-    earnings_loss = str(earnings_losses[counter])
-    counter += 1
-    print(stock_symbol + "\t " + share_number + "  \t" + purchase_price + "\t\t\t" + current_price + "\t\t\t" + earnings_loss)
 
-# # print(titles[0])
+
+
+
+
+""" Alternate Table Print """
+# print(titles[0])
 # print(str(titles[0]) + ": " + str(stock_symbols[0]))
 # print(str(titles[1]) + ": " + str(number_shares[0]))
 # print(str(titles[2]) + ": " + str(current_prices[0]))
@@ -198,3 +175,7 @@ for i in stock_list:
 # print(str(titles[2]) + ": " + str(current_prices[4]))
 # print(str(titles[3]) + ": " + str(purchase_prices[4]))
 # print(str(titles[4]) + ": $" + str(earnings_losses[4]))
+
+
+# Quit out of the program
+exit()

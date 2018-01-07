@@ -112,9 +112,38 @@ stock_list = [
     earnings_losses
 ]
 
+
+for string in stock_list[1]:
+    if string == "":
+        print("\nALERT Need to complete Stock Symbols")
+        exit()
+
+for string in stock_list[2]:
+    if string == "":
+        print("\nALERT Need to complete Number of Shares")
+        exit()
+
+for string in stock_list[3]:
+    if string == "":
+        print("\nALERT Need to complete Purchase Prices")
+        exit()
+
+for string in stock_list[4]:
+    if string == "":
+        print("\nALERT Need to complete Current Prices")
+        exit()
+
+for string in stock_list[5]:
+    if string == "":
+        print("\nALERT Cannot compute earnings and losses")
+        exit()
+
+
 """Print Title of Table"""
 print("Stock Ownership Portfolio for {0}".format(names[0]) + "\n")
 
+
+# Go Through Stock Table
 print(titles[0] + "\t" + titles[1] + "\t" + titles[2] + "\t" + titles[3] + "\t" + titles[4])
 print("------------------------------------------------------------------------------------")
 print(str(stock_list[1][0]), "\t", str(stock_list[2][0]), "\t\t", str(stock_list[3][0]), "\t\t", str(stock_list[4][0]), "\t\t", str(stock_list[5][0]))
@@ -122,60 +151,6 @@ print(str(stock_list[1][1]), "\t", str(stock_list[2][1]), "\t\t", str(stock_list
 print(str(stock_list[1][2]), "\t", str(stock_list[2][2]), "\t\t", str(stock_list[3][2]), "\t\t", str(stock_list[4][2]), "\t\t", str(stock_list[5][2]))
 print(str(stock_list[1][3]), "\t", str(stock_list[2][3]), "\t\t", str(stock_list[3][3]), "\t\t", str(stock_list[4][3]), "\t\t", str(stock_list[5][3]))
 print(str(stock_list[1][4]), "\t", str(stock_list[2][4]), "\t\t", str(stock_list[3][4]), "\t\t", str(stock_list[4][4]), "\t\t", str(stock_list[5][4]))
-
-
-
-
-
-
-""" Alternate Table Print """
-# print(titles[0])
-# print(str(titles[0]) + ": " + str(stock_symbols[0]))
-# print(str(titles[1]) + ": " + str(number_shares[0]))
-# print(str(titles[2]) + ": " + str(current_prices[0]))
-# print(str(titles[3]) + ": " + str(purchase_prices[0]))
-# print(str(titles[4]) + ": $" + str(earnings_losses[0]))
-#
-# # Line Break
-# print("\n", "--------------------")
-#
-# # print(titles[1])
-# print(str(titles[0]) + ": " + str(stock_symbols[1]))
-# print(str(titles[1]) + ": " + str(number_shares[1]))
-# print(str(titles[2]) + ": " + str(current_prices[1]))
-# print(str(titles[3]) + ": " + str(purchase_prices[1]))
-# print(str(titles[4]) + ": $" + str(earnings_losses[1]))
-#
-# # Line Break
-# print("\n", "--------------------")
-#
-# # print(titles[2])
-# print(str(titles[0]) + ": " + str(stock_symbols[2]))
-# print(str(titles[1]) + ": " + str(number_shares[2]))
-# print(str(titles[2]) + ": " + str(current_prices[2]))
-# print(str(titles[3]) + ": " + str(purchase_prices[2]))
-# print(str(titles[4]) + ": $" + str(earnings_losses[2]))
-#
-# # Line break
-# print("\n", "--------------------")
-#
-# # print(titles[3])
-# print(str(titles[0]) + ": " + str(stock_symbols[3]))
-# print(str(titles[1]) + ": " + str(number_shares[3]))
-# print(str(titles[2]) + ": " + str(current_prices[3]))
-# print(str(titles[3]) + ": " + str(purchase_prices[3]))
-# print(str(titles[4]) + ": $" + str(earnings_losses[3]))
-#
-# # Line Break
-# print("\n", "--------------------")
-#
-# # print(titles[4])
-# print(str(titles[0]) + ": " + str(stock_symbols[4]))
-# print(str(titles[1]) + ": " + str(number_shares[4]))
-# print(str(titles[2]) + ": " + str(current_prices[4]))
-# print(str(titles[3]) + ": " + str(purchase_prices[4]))
-# print(str(titles[4]) + ": $" + str(earnings_losses[4]))
-
 
 # Quit out of the program
 exit()

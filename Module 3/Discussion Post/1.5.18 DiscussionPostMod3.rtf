@@ -1,0 +1,122 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 AndaleMono;\f2\fnil\fcharset0 HelveticaNeue;
+}
+{\colortbl;\red255\green255\blue255;\red34\green45\blue53;\red255\green255\blue255;\red47\green255\blue18;
+\red0\green0\blue0;\red38\green38\blue38;}
+{\*\expandedcolortbl;;\cssrgb\c17647\c23137\c27059;\cssrgb\c100000\c100000\c100000;\cssrgb\c15686\c99608\c7843;
+\csgray\c0\c90000;\cssrgb\c20000\c20000\c20000;}
+\margl1440\margr1440\vieww10900\viewh9780\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\b\fs32 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\ul \ulc2 Describe a scenario where a loop would be helpful in programming. Specify if a for or a while loop is more applicable to the scenario\
+\
+\
+
+\b0 \ulnone In programming there are multiple examples that would prove why looping is important and can definitely improve your coding skills, as well as, decreasing the amount of code that needs to be written. Looping can be used in just about any scenario. In Python and many other languages, the two main types of loops are known as the 
+\b for 
+\b0 and 
+\b while 
+\b0 loops. Each of these loops also have many different variations depending on the programming language that you are writing. In regards to Python, these loops can also be utilized for the same purpose and are written in a slightly different way from one another.\
+\
+The 
+\b for 
+\b0 loop is used to iterate over elements of a sequence. The 
+\b for 
+\b0 loop iteration count also is predetermined by every item that is found in the object, list, or tuple. The pythonforbeginners.com website states that a 
+\b for 
+\b0 loop works like this: \'93for all elements in a list, do this\'94. Their example looks something like this: \
+\
+
+\f1\fs24 \cf4 \cb5 \kerning1\expnd0\expndtw0 \CocoaLigature0 computer_brands = ["Apple", "Asus", "Dell", "Samsung"]\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf4 >>> for brands in computer_brands:\
+...     print brands\
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs32 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+The 
+\b while
+\b0  loop is a bit different than the 
+\b for 
+\b0 loop. The amount of iterations needed is not always predetermined and will only execute only as long as the condition is met. This does not always have to be for every item in the dictionary, list or tuple, unlike the 
+\b for 
+\b0 loop. The 
+\b for 
+\b0 loop automatically looks for every item in the variable and will perform the logic provided within the loop for every value of the variable that it iterates over. The pythonforbeginners.com website mentions that the 
+\b while 
+\b0 loop works like this: \'93while this is true, do this\'94. Similar but definitely different from the 
+\b for 
+\b0 loop. Here is the example provided for a 
+\b while 
+\b0 loop:\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf4 \cb5 \kerning1\expnd0\expndtw0 \CocoaLigature0 computer_brands = ["Apple", "Asus", "Dell", "Samsung"]\
+i = 0\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+\cf4 \cb5 >>> while i < len(computer_brands):\
+...     print(computer_brands[i])\
+		i+=1															
+\f0\fs32 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \
+Loops can also be nested in one another to access further variable properties from a dictionary, list or tuple. These are as it sounds, known as a nested loop.\
+\
+There are also two different statements that can be included while using either the 
+\b while 
+\b0 or the 
+\b for 
+\b0 loop. These are known as the 
+\b Break 
+\b0 and the 
+\b Continue 
+\b0 statements. These do exactly as they sound when programming in a loop. If there is a condition that is met and the developer would like the loop to stop working/iterating, he or she can break out of the loop and prevent it from further running. This is simply used by inputting the keyword 
+\b break
+\b0  where it is necessary within the loop. Similarly, the 
+\b continue 
+\b0 statement is used to tell Python to skip the rest of the statements in the current loop block and to continue to the next iteration of loop. \
+
+\i \
+\pard\pardeftab720\partightenfactor0
+
+\f2\i0\b\fs35\fsmilli17600 \cf6 \cb3 Break Statement: 
+\i\b0 for i in range(1,10):\
+    					if i == 3:\
+						break\
+   					print(i)\
+\
+\pard\pardeftab720\partightenfactor0
+
+\i0\b \cf6 \cb3 Continue Statement: 
+\i\b0 for i in range(1,10):\
+    					if i == 3:\
+						continue\
+   					print(i)\
+\
+
+\b \
+
+\f0\i0\b0\fs32 \ul My Example:\ulnone \
+Now that I have a better understanding of when to use a list, dictionary, and tuple, I have properly understood when to include the loop logic into the code. An example of where I have used this and can continue to use loop logic is to print all of the items that have been gained from user input. If you have an application that is supposed to create and print out a grocery list based on user input, there would be some tasks that need to be implemented first. The developer would first need to initialize an empty list or dictionary. I am going to use the example of lists.\
+\
+Once the empty list has been initialized and stored to a variable, the developer would need to store multiple user input variables into memory in order to gain the list values. The developer would then be able to write a function or simply use the .append() method to store the variable into the list. This is similar to the .push() method in JavaScript for arrays.\
+\
+After the list is full of the necessary values for the grocery list, the developer can use a 
+\b for 
+\b0 loop to iterate over the entire list and print each index of the list. Displayed in the user\'92s console is a string of each of their inputted items that need to be added to their grocery list. In this example, I believe that a 
+\b for 
+\b0 loop would be more appropriate, however, this can also be done with specifying a 
+\b while 
+\b0 loop to only run for the len() of the grocery_list variable. The developer would just need to ensure that they defined and incremented a counter variable. This does not need to be done with a 
+\b for 
+\b0 loop. 
+\b While 
+\b0 loops are more commonly used if the length of loop is unknown from the beginning and only will break under a certain condition. The 
+\b for 
+\b0 loop is more finite. }
