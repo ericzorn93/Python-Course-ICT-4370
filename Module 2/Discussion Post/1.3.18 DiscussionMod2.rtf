@@ -1,9 +1,11 @@
 {\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf200
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
 {\colortbl;\red255\green255\blue255;\red34\green45\blue53;\red255\green255\blue255;\red153\green168\blue186;
-\red32\green32\blue32;\red117\green114\blue185;\red88\green118\blue71;\red191\green100\blue38;}
+\red32\green32\blue32;\red117\green114\blue185;\red88\green118\blue71;\red191\green100\blue38;\red153\green168\blue186;
+\red32\green32\blue32;\red88\green118\blue71;\red191\green100\blue38;\red117\green114\blue185;}
 {\*\expandedcolortbl;;\cssrgb\c17647\c23137\c27059;\cssrgb\c100000\c100000\c100000;\csgenericrgb\c60000\c65882\c72941;
-\csgenericrgb\c12549\c12549\c12549;\csgenericrgb\c45882\c44706\c72549;\csgenericrgb\c34510\c46275\c27843;\csgenericrgb\c74902\c39216\c14902;}
+\csgenericrgb\c12549\c12549\c12549;\csgenericrgb\c45882\c44706\c72549;\csgenericrgb\c34510\c46275\c27843;\csgenericrgb\c74902\c39216\c14902;\csgenericrgb\c60000\c65882\c72941;
+\csgenericrgb\c12549\c12549\c12549;\csgenericrgb\c34510\c46275\c27843;\csgenericrgb\c74902\c39216\c14902;\csgenericrgb\c45882\c44706\c72549;}
 \margl1440\margr1440\vieww10800\viewh8400\viewkind0
 \deftab720
 \pard\pardeftab720\partightenfactor0
@@ -55,11 +57,81 @@ If the condition is not met to be true and the number from the input is a string
 \i Your number is not an integer
 \i0 .\
 \
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
 
 \f1\fs24 \cf4 \cb5 \kerning1\expnd0\expndtw0 number = \cf6 input\cf4 (\cf7 "What is your favorite number"\cf4 )\
 \cf8 if \cf6 int\cf4 (number):\
     \cf6 print\cf4 (\cf7 "Your favorite number is " \cf4 + \cf6 str\cf4 (number))\
 \cf8 else\cf4 :\
     \cf6 print\cf4 (\cf7 "Your number is not an integer!"\cf4 )\
-}
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\i\fs32 \cf2 \cb1 \expnd0\expndtw0\kerning0
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\i0\b \cf2 What is the difference between if else and if elif else? How does this relate to control flow? If Python did not have if elif else, then how could you achieve the same goal with if else logic?\'a0\
+
+\b0 \
+When speaking about control flow, there are three main statements that are used in many, if not all of the major programming languages for logic. There is the famous 
+\i if 
+\i0 statement, the 
+\i else 
+\i0 statement, and the 
+\i elif 
+\i0 or 
+\i else if
+\i0  statement in some other languages than Python. As it sounds, the 
+\i if 
+\i0 statement will execute code that has validated to true within its condition. The code falls within the code block following the if statement. The 
+\i if 
+\i0 statement is saying that if something happens, execute some code. On the contrary, the 
+\i else 
+\i0 statement is saying that when the 
+\i if 
+\i0 statement renders false, execute the other code within the 
+\i else
+\i0  code block. This may look something like this:\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs24 \cf9 \cb10 \kerning1\expnd0\expndtw0 name = \cf11 "hello"\
+\cf12 if \cf9 name == \cf11 "hello"\cf9 :\
+    \cf13 print\cf9 (name)\
+\cf12 else\cf9 :\
+    \cf13 print\cf9 (\cf12 False\cf9 )\
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs32 \cf2 \cb1 \expnd0\expndtw0\kerning0
+\
+The 
+\i else 
+\i0 statement always will follow the 
+\i if 
+\i0 statement for proper logic in the interpreter. Also, when the 
+\i if 
+\i0 condition is equal to zero, it will then look for an
+\i  else 
+\i0 or 
+\i elif 
+\i0 statement. The 
+\i elif 
+\i0 conditional statement means that when the first 
+\i if 
+\i0 condition is false, the code will then attempt another condition. You can put multiple 
+\i elif 
+\i0 statements before an 
+\i else 
+\i0 statement. When all of the 
+\i if 
+\i0 and 
+\i elif
+\i0  statements evaluate to zero or false, the code block within the 
+\i else 
+\i0 condition is then executed. 
+\i Else 
+\i0 will not be executed before then. Tutorialspoint.com states that core Python does not utilize the switch and case statements like some other programming languages. Control flow is when there is an order of function calls or instructions and statements that are executed the a program is running. This is a computer science concept that is found in most any programming language. It is used to determine what section of the code is supposed to be executed at a given time. As mentioned above, the most common statements in any language are if/else with elif being a close second. The concept is transferrable and the syntax for control flow methods is similar in pretty much any programming language. Here is the link: {\field{\*\fldinst{HYPERLINK "https://www.computerhope.com/jargon/c/contflow.htm"}}{\fldrslt https://www.computerhope.com/jargon/c/contflow.htm}}. \
+\
+If there was no such thing as if, elif, or else statements, you would be able to create your own functions. If the function were to return true, it can then be executed. If the function returned false, it would have to continuously be running until it would properly return true. These functions can be called later within the code by themselves or within a loop. Loops like a for loop and while loop also depend on conditional statements to let the loop know when to stop running. Conditional logic is imperative for all programming. (
+\i Conditional Statements can also be nested)}
