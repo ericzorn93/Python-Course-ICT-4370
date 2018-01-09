@@ -1,5 +1,5 @@
 """
-    Eric Zorn 1/9/2018 Stock Earnings Summary: ICT 4370 Winter 2018 Module 2
+    Eric Zorn 1/8/2018 Stock Earnings Summary: ICT 4370 Winter 2018 Module 2
 
     In this project, I was able to build two different tables with prefilled user data. I was able to store all of the information
     into the appropriate variables as lists of information. I then was able to gain user input for the person's name. I then performed
@@ -101,21 +101,3 @@ print("{0}         | {1}        | {2}           | {3}         | ${4}".format(sto
 print("{0}        | {1}       | {2}          | {3}         | ${4}".format(stock_symbols[2], number_shares[2], purchase_prices[2], current_prices[2], earns_losses[2]))
 print("{0}          | {1}       | {2}          | {3}         | ${4}".format(stock_symbols[3], number_shares[3], purchase_prices[3], current_prices[3], earns_losses[3]))
 print("{0}           | {1}       | {2}         | {3}        | ${4}".format(stock_symbols[4], number_shares[4], purchase_prices[4], current_prices[4], earns_losses[4]))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
