@@ -1,0 +1,150 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf200
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red34\green45\blue53;\red255\green255\blue255;\red109\green109\blue109;
+\red32\green32\blue32;\red191\green100\blue38;\red254\green187\blue91;\red153\green168\blue186;\red117\green114\blue185;
+\red88\green118\blue71;\red86\green132\blue173;\red152\green54\blue29;}
+{\*\expandedcolortbl;;\cssrgb\c17647\c23137\c27059;\cssrgb\c100000\c100000\c100000;\csgenericrgb\c42745\c42745\c42745;
+\csgenericrgb\c12549\c12549\c12549;\csgenericrgb\c74902\c39216\c14902;\csgenericrgb\c99608\c73333\c35686;\csgenericrgb\c60000\c65882\c72941;\csgenericrgb\c45882\c44706\c72549;
+\csgenericrgb\c34510\c46275\c27843;\csgenericrgb\c33725\c51765\c67843;\csgenericrgb\c59608\c21176\c11373;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid1\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid101\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f0\b\fs32 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 1a) What are *args and **kwargs? Please provide an explanation and provide an example of using each.\'a0\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl360\partightenfactor0
+\ls1\ilvl0
+\b0 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8259 	}Both *args and **kwargs are used to pass a variable number of arguments to a function. Using a single asterisk form is known as args and is used for non-key-worded list of arguments to a function. This can otherwise be known as passing a simple list of values with a single argument. The double asterisk version in Python is otherwise known as kwargs. The \'93k\'94 stands for keyword in this case. This otherwise may be known as passing a keyword list or dictionary to a function as an argument. Commonly, you would use *args to pass an undefined number of arguments to your function and do not know how many arguments may or may not be pass. This allows the developer to pass in as many arguments as he or she would like with no specific defined ending. This can help when dealing with large chunks of data. Kwargs on the hand can be used to handle named arguments that you have not defined in advance. This would be similar to defining a dictionary of items so that the developer knows exactly what is being passed into the function with the given key-value pair. The values for either a list/tuple of *args or a dictionary of **kwargs can be passed as a parameter to a function and unpacked properly by the function to run through the function\'92s logic. Interestingly, you can use a set of *args, **kwargs, and single arguments all together at the same time in a function. Below is an example of the difference.\
+{\listtext	\uc0\u8259 	}Resource: {\field{\*\fldinst{HYPERLINK "https://stackoverflow.com/questions/3394835/args-and-kwargs"}}{\fldrslt https://stackoverflow.com/questions/3394835/args-and-kwargs}}\
+\pard\tx720\pardeftab720\sl360\partightenfactor0
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Example 1:\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b0\fs24 \cf4 \cb5 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 # Simple Example of an *Args function with many different arguments passed\
+\cf6 def \cf7 myArgs\cf8 (*names):\
+    \cf6 for \cf8 count\cf6 , \cf8 name \cf6 in \cf9 enumerate\cf8 (names):\
+        \cf9 print\cf8 (count\cf6 , \cf8 name)\
+\
+myArgs(\cf10 "Bob"\cf6 , \cf10 "Mary"\cf6 , \cf10 "Sue"\cf6 , \cf10 "Donny"\cf6 , \cf10 "James"\cf6 , \cf11 22\cf6 , \cf11 435.234\cf6 , \cf11 2\cf6 , \cf10 "hello"\cf6 , \cf10 "goodbye"\cf8 )\
+\
+\
+\cf9 print\cf8 (\cf10 "\cf6 \\n\cf10 "\cf8 )\
+\
+\
+\cf4 # Simple Example of a **Kwargs function with many different key-value pairs passed\
+\cf6 def \cf7 myKwargs\cf8 (**days):\
+    \cf6 for \cf8 count\cf6 , \cf8 day \cf6 in \cf8 days.items():\
+        \cf9 print\cf8 (count\cf6 , \cf8 day)\
+\
+\cf4 # Function call with defined keys and values\
+\cf8 myKwargs(\
+    \cf12 first \cf8 = \cf10 "Sunday"\cf6 ,\
+    \cf12 second \cf8 = \cf10 "Monday"\cf6 ,\
+    \cf12 third \cf8 = \cf10 "Tuesday"\cf6 ,\
+    \cf12 fourth \cf8 = \cf10 "Wednesday"\cf6 ,\
+    \cf12 fifth \cf8 = \cf10 "Thursday"\cf6 ,\
+    \cf12 sixth \cf8 = \cf10 "Friday"\cf6 ,\
+    \cf12 seventh \cf8 = \cf10 "Saturday"\
+\cf8 )\
+\
+\cf9 print\cf8 (\cf10 "\cf6 \\n\cf10 "\cf8 )\
+\
+\cf4 # Predefined Dictionary passed into the function using **kwargs\
+\cf8 hello = \{\
+    \cf10 "first_name"\cf8 : \cf10 "Eric"\cf6 ,\
+    \cf10 "last_name"\cf8 : \cf10 "Zorn"\
+\cf8 \}\
+\
+myKwargs(**hello)\
+\
+\
+\cf4 # Creating a function using normal arg, *args, and **kwargs together\
+\cf6 def \cf7 together\cf8 (name\cf6 , \cf8 *test1\cf6 , \cf8 **test2):\
+    \cf9 print\cf8 (name)\
+    \cf6 for \cf8 num\cf6 , \cf8 item \cf6 in \cf9 enumerate\cf8 (test1):\
+        \cf9 print\cf8 (num\cf6 , \cf8 item)\
+\
+    \cf6 for \cf8 num\cf6 , \cf8 second_item \cf6 in \cf9 enumerate\cf8 (test2.values()):\
+        \cf9 print\cf8 (num\cf6 , \cf8 second_item)\
+\
+\cf4 # Predefined Variables\
+\cf8 my_name = \cf10 "John Smith"\
+\cf8 ages = [\cf11 22\cf6 , \cf11 25\cf6 , \cf11 18\cf6 , \cf11 45\cf6 , \cf11 83\cf6 , \cf11 12\cf6 , \cf11 24\cf8 ]\
+random_birthdays = \{\
+    \cf10 "first"\cf8 : \cf10 "8/12/1992"\cf6 ,\
+    \cf10 "second"\cf8 : \cf10 "9/25/1999"\cf6 ,\
+    \cf10 "third"\cf8 : \cf10 "1/20/2018"\cf6 ,\
+    \cf10 "fourth"\cf8 : \cf10 "6/15/2005"\
+\cf8 \}\
+\
+\cf9 print\cf8 (\cf10 "\cf6 \\n\cf10 "\cf8 )\
+\
+\cf4 # Together Function Call\
+\cf8 together(my_name\cf6 , \cf8 *ages\cf6 , \cf8 **random_birthdays)\
+\pard\tx720\pardeftab720\sl360\partightenfactor0
+
+\f0\fs32 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\sl360\partightenfactor0
+
+\b \cf2 1b) What is Recursion in programming? Explain recursion in your own words. Provide an example of a recursive function.\'a0\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl360\partightenfactor0
+\ls2\ilvl0
+\b0 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8259 	}To put it simply, in programming (any language), recursion is when a function will call itself one or more times in its own function body. As Python-Course.eu mentions, the recursive function call is going to most likely return the value of the function call. The issue with creating recursion is that it can lead to an infinite loop of function calls which can lead to an infinite loop of function calls. In order to use recursive functions in a program, the recursive function must include a termination point. The article also mentions that every recursive function must include a base case. This essentially is when the function calls itself over and over again, until it reaches a resolution that it does not need to recall itself. This is otherwise known as the base case and no further recursive calls to the function are needed. Resource: {\field{\*\fldinst{HYPERLINK "https://www.python-course.eu/recursive_functions.php"}}{\fldrslt https://www.python-course.eu/recursive_functions.php}}. Here is an example below:\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\fs24 \cf4 \cb5 # Recursion Functions in Python\
+\cf9 print\cf8 (\cf10 "\cf6 \\n\cf10 Recursive Function Calls\cf6 \\n\cf10 -------------------"\cf8 )\
+\
+\cf6 def \cf7 recursion\cf8 (number):\
+    \cf6 if \cf8 number == \cf11 0\cf8 :\
+        \cf9 print\cf8 (number)\
+        \cf6 return \cf8 number\
+    \cf6 else\cf8 :\
+        \cf9 print\cf8 (number)\
+        \cf6 return \cf8 number * recursion(number - \cf11 1\cf8 )\
+\
+\cf4 # Recursion Function call will count down from 25 to 0\
+\cf8 recursion(\cf11 25\cf8 )\
+\pard\tx720\pardeftab720\sl360\partightenfactor0
+
+\f0\fs32 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\b \cf2 2b) Sandwiches: Write a function that accepts a list of items a person wants on a sandwich. The function should have one parameter that collects as many items as the function call provides, and it should print a summary of the sandwich that are being ordered. Call the function three times, using different number of arguments each time.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b0\fs24 \cf4 \cb5 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 # Question 2B\
+\cf9 print\cf8 (\cf10 "\cf6 \\n\cf10 "\cf8 )\
+\
+\cf6 def \cf7 sandwichToppings\cf8 (*topping):\
+    toppings = []\
+\
+    \cf6 for \cf8 item \cf6 in \cf8 topping:\
+        toppings.append(\cf9 str\cf8 (item).title())\
+\
+    \cf6 return \cf8 toppings\
+\
+\
+\
+first_sandwich = sandwichToppings(\cf10 "turkey"\cf6 , \cf10 "lettuce"\cf6 , \cf10 "mayo"\cf6 , \cf10 "american cheese"\cf8 )\
+second_sandwich = sandwichToppings(\cf10 "chicken"\cf6 , \cf10 "mozzarella cheese"\cf6 , \cf10 "lettuce"\cf6 , \cf10 "balsamic vinegar"\cf8 )\
+third_sandwich = sandwichToppings(\cf10 "grilled eggplant"\cf6 , \cf10 "red peppers"\cf6 , \cf10 "olive oil"\cf6 , \cf10 "oregano"\cf8 )\
+\
+\cf9 print\cf8 (\cf10 "First Sandwich: \{0\}"\cf8 .format(first_sandwich))\
+\cf9 print\cf8 (\cf10 "Second Sandwich: \{0\}"\cf8 .format(second_sandwich))\
+\cf9 print\cf8 (\cf10 "Third Sandwich: \{0\}"\cf8 .format(third_sandwich))\
+\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f0\fs32 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+}
