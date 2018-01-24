@@ -1,6 +1,6 @@
 import datetime as dt
 
-# Import User Interface
+# Import User IDs with UUID Module 
 import uuid
 
 # Investor Class
