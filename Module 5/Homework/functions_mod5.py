@@ -7,6 +7,7 @@ def main():
 
     # Assigns Investor Class Inheritance for the User Bob Smith
     user_bob = Investor("Bob", "Smith", "123 Main Street", "212-503-9046")
+    E = Investor("Bob", "Smith", "123 Main Street", "212-503-9046")
 
     # Table Titles
     titles = [
@@ -147,6 +148,11 @@ def main():
     # Testing to see if the Bonds Subclass works
     test_bond = Bonds("GT2:GOV", 34, 100.02, 100.05, 200, 1.38, 32)
     print(test_bond.calcCoupon())
+
+
+    # Testing to make sure Uuid Unique IDs are being used
+    print("Bob's User ID is " + user_bob.id)
+    print("Eric's User ID is " + E.id)
 
 
 # Main Function Call

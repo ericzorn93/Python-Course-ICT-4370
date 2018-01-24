@@ -1,5 +1,7 @@
 import datetime as dt
 
+# Import User Interface
+import uuid
 
 # Investor Class
 class Investor:
@@ -9,6 +11,7 @@ class Investor:
         self.full_name = "{0} {1}".format(self.first_name, self.last_name).title()
         self.address = address
         self.phone_number = phone_number
+        self.id = str(uuid.uuid4())
 
 
 
