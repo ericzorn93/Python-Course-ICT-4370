@@ -44,7 +44,7 @@ def main():
         "current_date": goog.currentDate(),
         "earn_loss": round(goog.earnLossConversion(goog.shares_owned, goog.current_price, goog.purchase_price), 2),
         "yearly_yield": round(goog.newYearlyCalc(goog.current_price, goog.purchase_price), 2),
-        "coupon": Bonds(goog.symbol, goog.shares_owned, goog.purchase_price, goog.current_price, goog.shares_owned,
+        "coupon": Bonds(goog.symbol, goog.purchase_price, goog.current_price, goog.shares_owned,
                         10, 23)
     }
 
@@ -146,6 +146,12 @@ def main():
     # Loop Through Entire Dictionary
     for key, val in stocks_dict.items():
         print(key.upper())
+    
+    for key in stocks_dict:
+        try:
+            stocks_dict[key]
+        except KeyError as err:
+            print('KeyError: stocks_dict has no key', key)
 
 
 

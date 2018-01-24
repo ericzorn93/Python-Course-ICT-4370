@@ -1,7 +1,13 @@
 import datetime as dt
 
-# Import User IDs with UUID Module
-import uuid
+
+class ID_counter():
+    id_count = 0
+    @classmethod
+    def get_new_id(cls):
+        ID_counter.id_count += 1
+        #print('9 ID_counter=', ID_counter.id_count)
+        return ID_counter.id_count
 
 # Investor Class
 class Investor:
@@ -11,7 +17,8 @@ class Investor:
         self.full_name = "{0} {1}".format(self.first_name, self.last_name).title()
         self.address = address
         self.phone_number = phone_number
-        self.id = str(uuid.uuid4())
+        self.id = ID_counter.get_new_id()
+        
 
 
 
@@ -24,6 +31,7 @@ class StockData:
         self.purchase_price = purchase_price
         self.current_price = current_price
         self.purchase_date = "8/1/2015"
+        self.id = ID_counter.get_new_id()
 
     def currentDate(self):
         now = dt.datetime.now()
@@ -58,11 +66,12 @@ class StockData:
 
 # Calculate Bonds for Different Stocks
 class Bonds(StockData):
-    def __init__(self, symbol, shares_owned, purchase_price, current_price, quantity, coupon, yield_amt_pct):
-        super().__init__(symbol, shares_owned, purchase_price, current_price)
+    def __init__(self, symbol, purchase_price, current_price, quantity, coupon):
+        super().__init__(symbol, 0, purchase_price, current_price)
         self.quantity = quantity
         self.coupon = coupon
-        self.yield_amt_pct = yield_amt_pct
+        #self.yield_amt_pct = yield_amt_pct
+        self.yield_amt_pct = self.calcCoupon()
 
     def calcCoupon(self):
         """
