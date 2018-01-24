@@ -55,16 +55,15 @@ class StockData:
 
 # Calculate Bonds for Different Stocks
 class Bonds(StockData):
-    def __init__(self, symbol, shares_owned, purchase_price, current_price, coupon, yield_amt_pct):
+    def __init__(self, symbol, shares_owned, purchase_price, current_price, quantity, coupon, yield_amt_pct):
         super().__init__(symbol, shares_owned, purchase_price, current_price)
+        self.quantity = quantity
         self.coupon = coupon
         self.yield_amt_pct = yield_amt_pct
 
     def calcCoupon(self):
-        coupon = (self.yield_amt_pct / 100)
-        return coupon
-
-
-
-
-
+        """
+        Calculates the correct coupon percentage
+        :return: coupon amount
+        """
+        return self.quantity

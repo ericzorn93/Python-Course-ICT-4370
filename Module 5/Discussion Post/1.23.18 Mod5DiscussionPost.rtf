@@ -1,0 +1,113 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf200
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;\f1\fmodern\fcharset0 Courier-Bold;\f2\fmodern\fcharset0 Courier;
+}
+{\colortbl;\red255\green255\blue255;\red34\green45\blue53;\red255\green255\blue255;\red13\green95\blue24;
+\red234\green255\blue193;\red38\green38\blue38;\red19\green112\blue166;\red83\green83\blue83;\red8\green25\blue107;
+\red50\green91\blue142;}
+{\*\expandedcolortbl;;\cssrgb\c17647\c23137\c27059;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c43922\c12549;
+\cssrgb\c93333\c100000\c80000;\cssrgb\c20000\c20000\c20000;\cssrgb\c5490\c51765\c70980;\cssrgb\c40000\c40000\c40000;\cssrgb\c2353\c15686\c49412;
+\cssrgb\c25098\c43922\c62745;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f0\b\fs32 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Now that you have learned about Python functions and classes, find a Python library that is of interest to you and describe a class within it.\
+\
+
+\b0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 Python modules/libraries are what makes Python one of the most interesting and popularized languages today. As mentioned by Professor Kaim, the date time and math modules are two of the most powerful and frequently used modules by Python developers. Up to this current point, we were learning about the fundamental inner workings of the Python programming language. After reading about so many different libraries, I have been trying to figure out which one I find the most interesting. Libraries that perform complex mathematical equations like NumPy and SciPy have made the Python language very useful in the machine learning industries. Also, incorporating the matplotlib module has been popularized as well for a developer to numerically plot data into a graph. It is quite hard to chose my favorite library, however, I have found one that I really like. This library is known as TkInter. TkInter is used as a GUI design tool for Python developers. \
+\
+This has caught my interest, due to the fact that I am recently coming from an HTML, CSS and JavaScript background. Commonly, Python applications are either ran as web applications or in the command line for user interaction. Now, there is a huge push for development with all different kinds of technologies for native applications on the desktop that can be native. Currently, JavaScript libraries like React Native and Electron.js are being highly popularized and edited. These libraries allow developers to continue to use standard front-end technologies like HTML, CSS and JavaScript to create a native desktop application. Now, more simply, Python developers can create cross-os native desktop applications with TkInter. The application would then be able to be packed and distributed for people to install into their local machine. \
+\
+Other libraries like Requests, Scrapy, and SQLAlchemy can also tie into a TkInter application in order to be able to pull data from the internet or database. Requests manages HTTP requests in a more simplified manner than vanilla Python, while Scrapy allows data scraping from websites. SQLAlchemy is a database library that manages SQL commands and databases with ease. Incorporating TkInter and these other module libraries, can ensure that a developer would be able to create a full-stack application for someone\'92s desktop. Another popular XML and JSON parsing library is known as BeautifulSoup.\
+\
+The awesome part is from our current experience already in the course, we are completely capable of using some of these libraries. This is due to the relatively easy nature of the Python language. The only tricky part may be understanding databases and database integration into your application.\
+\
+Here is an example of a very simple TkInter application that uses a button. The syntax is pretty simple to understand.\
+\
+\pard\pardeftab720\sl370\partightenfactor0
+
+\f1\b\fs30\fsmilli15440 \cf4 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 import
+\f2\b0 \cf6 \strokec6  
+\f1\b \cf7 \strokec7 tkinter
+\f2\b0 \cf6 \strokec6  
+\f1\b \cf4 \strokec4 as
+\f2\b0 \cf6 \strokec6  
+\f1\b \cf7 \strokec7 tk
+\f2\b0 \cf6 \strokec6 \
+\
+
+\f1\b \cf4 \strokec4 class
+\f2\b0 \cf6 \strokec6  
+\f1\b \cf7 \strokec7 Application
+\f2\b0 \cf6 \strokec6 (tk\cf8 \strokec8 .\cf6 \strokec6 Frame):\
+    
+\f1\b \cf4 \strokec4 def
+\f2\b0 \cf6 \strokec6  \cf9 \strokec9 __init__\cf6 \strokec6 (\cf4 \strokec4 self\cf6 \strokec6 , master\cf8 \strokec8 =
+\f1\b \cf4 \strokec4 None
+\f2\b0 \cf6 \strokec6 ):\
+        \cf4 \strokec4 super\cf6 \strokec6 ()\cf8 \strokec8 .\cf9 \strokec9 __init__\cf6 \strokec6 (master)\
+        \cf4 \strokec4 self\cf8 \strokec8 .\cf6 \strokec6 pack()\
+        \cf4 \strokec4 self\cf8 \strokec8 .\cf6 \strokec6 create_widgets()\
+\
+    
+\f1\b \cf4 \strokec4 def
+\f2\b0 \cf6 \strokec6  \cf9 \strokec9 create_widgets\cf6 \strokec6 (\cf4 \strokec4 self\cf6 \strokec6 ):\
+        \cf4 \strokec4 self\cf8 \strokec8 .\cf6 \strokec6 hi_there \cf8 \strokec8 =\cf6 \strokec6  tk\cf8 \strokec8 .\cf6 \strokec6 Button(\cf4 \strokec4 self\cf6 \strokec6 )\
+        \cf4 \strokec4 self\cf8 \strokec8 .\cf6 \strokec6 hi_there[\cf10 \strokec10 "text"\cf6 \strokec6 ] \cf8 \strokec8 =\cf6 \strokec6  \cf10 \strokec10 "Hello World
+\f1\b \\n
+\f2\b0 (click me)"\cf6 \strokec6 \
+        \cf4 \strokec4 self\cf8 \strokec8 .\cf6 \strokec6 hi_there[\cf10 \strokec10 "command"\cf6 \strokec6 ] \cf8 \strokec8 =\cf6 \strokec6  \cf4 \strokec4 self\cf8 \strokec8 .\cf6 \strokec6 say_hi\
+        \cf4 \strokec4 self\cf8 \strokec8 .\cf6 \strokec6 hi_there\cf8 \strokec8 .\cf6 \strokec6 pack(side\cf8 \strokec8 =\cf10 \strokec10 "top"\cf6 \strokec6 )\
+\
+        \cf4 \strokec4 self\cf8 \strokec8 .\cf6 \strokec6 quit \cf8 \strokec8 =\cf6 \strokec6  tk\cf8 \strokec8 .\cf6 \strokec6 Button(\cf4 \strokec4 self\cf6 \strokec6 , text\cf8 \strokec8 =\cf10 \strokec10 "QUIT"\cf6 \strokec6 , fg\cf8 \strokec8 =\cf10 \strokec10 "red"\cf6 \strokec6 ,\
+                              command\cf8 \strokec8 =\cf6 \strokec6 root\cf8 \strokec8 .\cf6 \strokec6 destroy)\
+        \cf4 \strokec4 self\cf8 \strokec8 .\cf6 \strokec6 quit\cf8 \strokec8 .\cf6 \strokec6 pack(side\cf8 \strokec8 =\cf10 \strokec10 "bottom"\cf6 \strokec6 )\
+\
+    
+\f1\b \cf4 \strokec4 def
+\f2\b0 \cf6 \strokec6  \cf9 \strokec9 say_hi\cf6 \strokec6 (\cf4 \strokec4 self\cf6 \strokec6 ):\
+        \cf4 \strokec4 print\cf6 \strokec6 (\cf10 \strokec10 "hi there, everyone!"\cf6 \strokec6 )\
+\
+root \cf8 \strokec8 =\cf6 \strokec6  tk\cf8 \strokec8 .\cf6 \strokec6 Tk()\
+app \cf8 \strokec8 =\cf6 \strokec6  Application(master\cf8 \strokec8 =\cf6 \strokec6 root)\
+app\cf8 \strokec8 .\cf6 \strokec6 mainloop()\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f0\b\fs32 \cf2 \cb3 \strokec2 \
+
+\b0 One of the main classes in the TkInter library is the Button class. The button widget allows users to be able to write a callback function and assign that function to the button rendered below in the code. The button can have a customized inner text like HTML. In the example below, the callback function executes when the button is clicked. The function will then print the string \'93click\'94 to the terminal until the user chooses to exit the program. Buttons without a callback are not really useful. If you need to change the state of a button, you can see the parameter state=DISABLED or ENABLED (with capitals) depending on the desired state of the button. You can also stylize the buttons as well with size (height and width) and color. You can also specify if the button is a CheckButton, RadioButton, or indicator. You can also specify an image in the root directory as a button as well. The argument \'93master\'94 is known as the parent widget or class. The button class also has tons of different attributes, such as text-align, font-size, and many more.\
+\
+It is quite interesting to see how one class within a library has so many different attributes and child classes that need to be known in order to create a program. I definitely would like to start using and learning more TkInter code to create dynamic Python GUI applications.\
+\
+\
+Button Class Example:\
+from tkinter import *\
+\
+master = Tk()\
+\
+def callback():\
+    print("click!")\
+\
+b = Button(master, text="OK", command=callback)\
+b.pack()\
+\
+mainloop()\
+\
+
+\b \
+References:\
+\
+{\field{\*\fldinst{HYPERLINK "https://pythontips.com/2013/07/30/20-python-libraries-you-cant-live-without/"}}{\fldrslt 
+\b0 https://pythontips.com/2013/07/30/20-python-libraries-you-cant-live-without/}}
+\b0 \
+\
+{\field{\*\fldinst{HYPERLINK "https://docs.python.org/3/library/tkinter.html#module-tkinter"}}{\fldrslt https://docs.python.org/3/library/tkinter.html#module-tkinter}}\
+\
+\pard\pardeftab720\sl360\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "http://effbot.org/tkinterbook/button.htm"}}{\fldrslt \cf2 http://effbot.org/tkinterbook/button.htm}}\
+\pard\pardeftab720\sl360\partightenfactor0
+\cf2 \
+Thanks,\
+Eric Zorn}

@@ -5,10 +5,10 @@ from StockClasses import Investor, StockData, Bonds
 
 def main():
 
-    user_bob = Investor("Bob", "Smith", "831 Loretta Drive", "201-625-2453")
+    # Assigns Investor Class Inheritance for the User Bob Smith
+    user_bob = Investor("Bob", "Smith", "123 Main Street", "212-503-9046")
 
-
-
+    # Table Titles
     titles = [
         "Symbol",
         "# Shares",
@@ -19,6 +19,7 @@ def main():
         "Yearly Earning/Loss"
     ]
 
+    # Assigning Variables to inherit from the Stock Data Class
     goog = StockData("GOOG", 125, 772.88, 941.53)
     msft = StockData("MSFT", 85, 56.60, 73.04)
     rds_a = StockData("RDS-A", 400, 49.58, 55.74)
@@ -29,10 +30,10 @@ def main():
     ibm = StockData("IBM", 80, 150.37, 145.30)
 
 
-    # Dictionary Definitions
+    # Dictionary Declaration
     stocks_dict = {}
 
-    # Stock Dict Assignments
+    # Stock Dict Assignments with Stock Values
     stocks_dict["goog"] = {
         "symbol": goog.symbol,
         "shares": goog.shares_owned,
@@ -121,13 +122,20 @@ def main():
         "yearly_yield": round(ibm.newYearlyCalc(ibm.current_price, ibm.purchase_price), 2)
     }
 
+
+    # Outputs a new Line to the console to separate the bash command.
     print("\n\n")
 
+    # Prints out User information stored in the Bob Variable and calling the Full name attribute
+    # Uses String format concatenation
     print("Stock information for {0}".format(user_bob.full_name))
 
+
+    # Loop Through titles variable and print out the table headers
     for title in titles:
         print(title, end=' | ')
 
+    # Print New Line
     print("\n")
 
     # Loop Through Entire Dictionary
@@ -136,7 +144,8 @@ def main():
 
 
 
-    test_bond = Bonds("yo", 123, 345, 54, 1.38, 5)
+    # Testing to see if the Bonds Subclass works
+    test_bond = Bonds("GT2:GOV", 34, 100.02, 100.05, 200, 1.38, 32)
     print(test_bond.calcCoupon())
 
 
