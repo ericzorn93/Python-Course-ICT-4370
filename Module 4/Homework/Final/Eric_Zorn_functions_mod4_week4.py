@@ -1,19 +1,28 @@
-"""Beginning of the Program"""
+"""
+    Eric Zorn - ICT 4370 - 1/24/2018
+
+    This assignment is from Module 4 and build upon the last assignment that we had completed from Module 3.
+    We have taken the functions that we had written and exported them to an external module to then be able to import.
+    Once the functions from the external module have been imported, I have built a table off of the proper information.
+"""
+
+# Imports from DateTime Module and External Custom Module of Functions
 import datetime as dt
-from function_import_mod4 import earnLossConversion, newYearlyCalc, buildTable
+from Eric_Zorn_function_imports_mod4_week4 import earnLossConversion, newYearlyCalc, buildTable
 
 
+# Defining Main Function
 def main():
     # Purchase Date Variable Declaration
     purchase_date = "8/1/2015"
 
-    # Current Date Variable Declaration
+    # Current Date Variable Declaration and formatted properly to the current date variable
     now = dt.datetime.now()
     current_date = now.strftime('%m/%d/%Y').strip()
 
 
 
-    # Dictionary Definitions
+    # Declaring Stock Dict and then assigning keys and values (Nested Dictionary)
     stocks_dict = {}
 
     stocks_dict["google"] = {
@@ -88,6 +97,7 @@ def main():
         "current_date": current_date
     }
 
+    # Titles for the header of the table
     titles = [
         "Symbol",
         "# Shares",
@@ -144,25 +154,31 @@ def main():
     }
     """
 
-    # earns_losses = {}
-    # yearly_earns_losses = {}
+
+    # Converting User Input for Name into title case. Stripped extra white space from both sides of the string
     name = input("What is your full name? ").title().strip()
 
 
+    # Print a formatted string for the full name from user input
     print("Stock Portfolio Information for {0}\n".format(name))
 
+    # Loop through and print table titles (headers)
     for title in titles:
         print(title, end=' | ')
 
+    # Print Blank Line Separator
     print("\n")
 
+    # Iterate through stocks_dict items and assign new keys with the proper values
     for key, val in stocks_dict.items():
+        # Assigns Earn Loss Values from calling the earnLossConversion Function
         val["earn_loss"] = earnLossConversion(
         stocks_dict[key]["shares"],
         stocks_dict[key]["current_price"],
         stocks_dict[key]["purchase_price"]
         )
 
+        # Assigns the yearly_yield value with the newYearlyCalc() function and rounded 2 decimal places
         val["yearly_yield"] = round(newYearlyCalc(
             stocks_dict[key]["current_price"],
             stocks_dict[key]["purchase_price"]
@@ -170,15 +186,18 @@ def main():
 
         # print(val)
 
+        # Assigns Iterated Values to each new variable declaration for every iteration
         symbol = val["symbol"]
         shares = val["shares"]
         purchase = val["purchase_price"]
         current = val["current_price"]
-        earn_loss = val["earn_loss"]
+        earn_loss = round(val["earn_loss"], 2)
         purchase_date = purchase_date
         yearly_yield = val["yearly_yield"]
 
         # print(symbol, " | ", shares, " | ", purchase, " | ", current)
+
+        # Final Printed String using the format() method for each value
         final_print = "{0} | {1} | ${2} | ${3} | ${4} | {5} | {6}%".format(
             symbol,
             shares,

@@ -1,5 +1,12 @@
 """
-    Functions for Module 4 to Import into functions_mod4.py
+    Functions for Module 4 to Import into Eric_Zorn_functions_mod4_week4.py
+
+    Main Functions are defined and called on the other document.
+
+    These functions are used to calculate the earns or losses of the current stock for the user's portfoilio.
+    The second is to calculate the yearly yield percentage for the user. Lastly, the buildTable() function is used
+    to take in any number of formatted strings of information. It then loops through the string and builds a table.
+    This would be useful if the programmer had many tables of different information to build.
 """
 
 
