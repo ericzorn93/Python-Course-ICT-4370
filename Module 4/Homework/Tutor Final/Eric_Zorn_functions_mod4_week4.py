@@ -107,56 +107,10 @@ def main():
         "Yearly Yield"
     ]
 
-    """
-    stock_symbols = {
-        "goog": "GOOGL",
-        "msft": "MSFT",
-        "rds": "RDS-A",
-        "aig": "AIG",
-        "fb": "FB",
-        "m": "M",
-        "f": "F",
-        "ibm": "IBM"
-    }
-
-    number_shares = {
-        "num_one": 125,
-        "num_two": 85,
-        "num_three": 400,
-        "num_four": 235,
-        "num_five": 150,
-        "num_six": 425,
-        "num_seven": 85,
-        "num_eight": 80
-    }
-
-    purchase_prices = {
-        "num_one": 772.88,
-        "num_two": 56.60,
-        "num_three": 49.58,
-        "num_four": 54.21,
-        "num_five": 124.31,
-        "num_six": 30.30,
-        "num_seven": 12.58,
-        "num_eight": 150.37
-    }
-
-    current_prices = {
-        "num_one": 941.53,
-        "num_two": 73.04,
-        "num_three": 55.74,
-        "num_four": 65.27,
-        "num_five": 172.45,
-        "num_six": 23.98,
-        "num_seven": 10.95,
-        "num_eight": 145.30
-    }
-    """
-
 
     # Converting User Input for Name into title case. Stripped extra white space from both sides of the string
-    ##name = input("What is your full name? ").title().strip()
-    name = 'Bob Smith'
+    name = input("What is your full name? ").title().strip()
+    # name = 'Bob Smith'
 
 
     # Print a formatted string for the full name from user input
@@ -197,10 +151,8 @@ def main():
         purchase_date = purchase_date
         yearly_yield = val["yearly_yield"]
 
-        # print(symbol, " | ", shares, " | ", purchase, " | ", current)
-
         # Final Printed String using the format() method for each value
-        final_print = "{0:13s} | {1:13d} | ${2:<12.2f} | ${3:<12.2f} | ${4:<12.2f} | {5:13s} | {6:12.2f}%".format(
+        final_print = "{0:13s} | {1:13d} | ${2:<12.2f} | ${3:<12.2f} | ${4:<12.2f} | {5:13s} | {6:12.2f}% | ".format(
             symbol.upper(),
             shares,
             purchase,
@@ -215,6 +167,17 @@ def main():
         buildTable(final_print)
 
 
+    # Error Checking for the Stocks_Dict Variable
+    if stocks_dict == {} or len(stocks_dict) <= 1:
+        raise KeyError("There are not enough keys in the stocks_dict dictionary")
+    else:
+        pass
+
+    for val in stocks_dict.values():
+        if val == "" or isinstance(val, str):
+            raise ValueError
+        else:
+            pass
 
 
 

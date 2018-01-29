@@ -1,8 +1,8 @@
 """
-    Eric Zorn - ICT 4370: Module 5 Classes in Python - 1/29/2018
+    Eric Zorn - ICT 4370: Module 6 Classes CSV in Python - 1/29/2018
 
     This module is the main class module and  contains all of the classes, attributes and methods that are initiated
-    and assigned in the other Python Module.
+    and assigned in the other Python Module. This is building upon the data from last week.
 """
 
 import datetime as dt
@@ -27,7 +27,7 @@ class ID_counter():
         return ID_counter.id_count
 
 # Investor Class
-class Investor:
+class Investor(object):
     def __init__(self, first_name, last_name, address, phone_number):
         self.first_name = first_name.strip()
         self.last_name = last_name.strip()
@@ -41,13 +41,13 @@ class Investor:
 
 
 # Stock Data Class
-class StockData:
+class StockData(object):
     def __init__(self, symbol, shares_owned, purchase_price, current_price):
-        self.symbol = symbol
+        self.symbol = symbol.upper()
         self.shares_owned = int(shares_owned)
         self.purchase_price = purchase_price
         self.current_price = current_price
-        self.purchase_date = dt.date(2017, 8, 1).strftime("%m-%d-%Y")
+        self.purchase_date = dt.date(2017, 8, 1).strftime("%m/%d/%Y")
         self.id = ID_counter.get_new_id()
 
     def currentDate(self):
@@ -83,15 +83,8 @@ class StockData:
 
 # Calculate Bonds for Different Stocks
 class Bonds(StockData):
-    def __init__(self, symbol, purchase_price, current_price, quantity, coupon):
+    def __init__(self, symbol, purchase_price, current_price, quantity, coupon, yield_amt_pct):
         super().__init__(symbol, 0, purchase_price, current_price)
         self.quantity = quantity
         self.coupon = coupon
-        self.yield_amt_pct = self.calcCoupon()
-
-    def calcCoupon(self):
-        """
-        Calculates the correct coupon percentage
-        :return: coupon amount
-        """
-        return self.quantity
+        self.yield_amt_pct = yield_amt_pct
