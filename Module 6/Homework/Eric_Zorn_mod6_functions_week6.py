@@ -25,220 +25,97 @@ def code_run():
     # Assigns User Bonds for Bob Smith
     bob_smith_bond = Bonds("GT2:GOV", 100.02, 100.05, 200, 1.38, 1.35)
 
-    # Working With Opening Files
-    with open('Lesson6_Data_Stocks.csv', 'r') as stock_data_file:
-        reader = csv.reader(stock_data_file)
+    # Working With Opening Files and Writing Files
+    with open('Lesson6_Data_Stocks.csv', 'r') as rf:
+        reader = csv.reader(rf)
         rows = []
+
         for row in reader:
            rows.append(row)
 
-        titles = rows[0]
+        # Pulling in Values from CSV Document
+        goog = StockData(rows[1][0], int(rows[1][1]), float(rows[1][2]), float(rows[1][3]))
+        msft = StockData(rows[2][0], int(rows[2][1]), float(rows[2][2]), float(rows[2][3]))
+        rds_a = StockData(rows[3][0], int(rows[3][1]), float(rows[3][2]), float(rows[3][3]))
+        aig = StockData(rows[4][0], int(rows[4][1]), float(rows[4][2]), float(rows[4][3]))
+        fb = StockData(rows[5][0], int(rows[5][1]), float(rows[5][2]), float(rows[5][3]))
+        m = StockData(rows[6][0], int(rows[6][1]), float(rows[6][2]), float(rows[6][3]))
 
-        print(titles, end=' | ')
+        # Stocks Dict Declaration
+        stocks_dict = {}
 
-        stock_data_file.close()
+        # Stocks Dict Assignments
+        stocks_dict["goog"] = {
+            "symbol": goog.symbol,
+            "shares": goog.shares_owned,
+            "purchase": goog.purchase_price,
+            "current": goog.current_price,
+            "current_date": goog.currentDate(),
+            "earn_loss": round(goog.earnLossConversion(goog.shares_owned, goog.current_price, goog.purchase_price), 2)
+        }
 
+        stocks_dict["msft"] = {
+            "symbol": msft.symbol,
+            "shares": msft.shares_owned,
+            "purchase": msft.purchase_price,
+            "current": msft.current_price,
+            "current_date": msft.currentDate(),
+            "earn_loss": round(msft.earnLossConversion(msft.shares_owned, msft.current_price, msft.purchase_price), 2)
+        }
 
+        stocks_dict["rds-a"] = {
+            "symbol": rds_a.symbol,
+            "shares": rds_a.shares_owned,
+            "purchase": rds_a.purchase_price,
+            "current": rds_a.current_price,
+            "current_date": rds_a.currentDate(),
+            "earn_loss": round(rds_a.earnLossConversion(rds_a.shares_owned, rds_a.current_price, rds_a.purchase_price), 2)
+        }
 
-    # Assigning Variables to inherit from the Stock Data Class
-    goog = StockData("GOOG", 125, 772.88, 941.53)
-    msft = StockData("MSFT", 85, 56.60, 73.04)
-    rds_a = StockData("RDS-A", 400, 49.58, 55.74)
-    aig = StockData("AIG", 235, 54.21, 65.27)
-    fb = StockData("FB", 150, 124.31, 172.45)
-    m = StockData("m", 425, 30.30, 23.98)
-    f = StockData("f", 85, 12.58, 10.95)
-    ibm = StockData("IBM", 80, 150.37, 145.30)
+        stocks_dict["aig"] = {
+            "symbol": aig.symbol,
+            "shares": aig.shares_owned,
+            "purchase": aig.purchase_price,
+            "current": aig.current_price,
+            "current_date": aig.currentDate(),
+            "earn_loss": round(aig.earnLossConversion(aig.shares_owned, aig.current_price, aig.purchase_price), 2)
+        }
 
-    # Dictionary Declaration
-    stocks_dict = {}
+        stocks_dict["fb"] = {
+            "symbol": fb.symbol,
+            "shares": fb.shares_owned,
+            "purchase": fb.purchase_price,
+            "current": fb.current_price,
+            "current_date": fb.currentDate(),
+            "earn_loss": round(fb.earnLossConversion(fb.shares_owned, fb.current_price, fb.purchase_price), 2)
+        }
 
-    # Stock Dict Assignments with Stock Values
-    stocks_dict["goog"] = {
-        "symbol": goog.symbol,
-        "shares": goog.shares_owned,
-        "purchase_price": goog.purchase_price,
-        "current_price": goog.current_price,
-        "purchase_date": goog.purchase_date,
-        "current_date": goog.currentDate(),
-        "earn_loss": round(goog.earnLossConversion(goog.shares_owned, goog.current_price, goog.purchase_price), 2),
-        "yearly_yield": round(goog.newYearlyCalc(goog.current_price, goog.purchase_price), 2),
-        "id": goog.id
-    }
-
-    stocks_dict["msft"] = {
-        "symbol": msft.symbol,
-        "shares": msft.shares_owned,
-        "purchase_price": msft.purchase_price,
-        "current_price": msft.current_price,
-        "purchase_date": msft.purchase_date,
-        "current_date": msft.currentDate(),
-        "earn_loss": round(msft.earnLossConversion(msft.shares_owned, msft.current_price, msft.purchase_price), 2),
-        "yearly_yield": round(msft.newYearlyCalc(msft.current_price, msft.purchase_price), 2),
-        "id": msft.id
-    }
-
-
-    stocks_dict["rds-a"] = {
-        "symbol": rds_a.symbol,
-        "shares": rds_a.shares_owned,
-        "purchase_price": rds_a.purchase_price,
-        "current_price": rds_a.current_price,
-        "purchase_date": rds_a.purchase_date,
-        "current_date": rds_a.currentDate(),
-        "earn_loss": round(rds_a.earnLossConversion(rds_a.shares_owned, rds_a.current_price, rds_a.purchase_price), 2),
-        "yearly_yield": round(rds_a.newYearlyCalc(rds_a.current_price, rds_a.purchase_price), 2),
-        "id": rds_a.id
-    }
-
-    stocks_dict["aig"] = {
-        "symbol": aig.symbol,
-        "shares": aig.shares_owned,
-        "purchase_price": aig.purchase_price,
-        "current_price": aig.current_price,
-        "purchase_date": aig.purchase_date,
-        "current_date": aig.currentDate(),
-        "earn_loss": round(aig.earnLossConversion(aig.shares_owned, aig.current_price, aig.purchase_price), 2),
-        "yearly_yield": round(aig.newYearlyCalc(aig.current_price, aig.purchase_price), 2),
-        "id": aig.id
-    }
-
-    stocks_dict["fb"] = {
-        "symbol": fb.symbol,
-        "shares": fb.shares_owned,
-        "purchase_price": fb.purchase_price,
-        "current_price": fb.current_price,
-        "purchase_date": fb.purchase_date,
-        "current_date": fb.currentDate(),
-        "earn_loss": round(fb.earnLossConversion(fb.shares_owned, fb.current_price, fb.purchase_price), 2),
-        "yearly_yield": round(fb.newYearlyCalc(fb.current_price, fb.purchase_price), 2),
-        "id": fb.id
-    }
-
-    stocks_dict["m"] = {
-        "symbol": m.symbol,
-        "shares": m.shares_owned,
-        "purchase_price": m.purchase_price,
-        "current_price": m.current_price,
-        "purchase_date": m.purchase_date,
-        "current_date": m.currentDate(),
-        "earn_loss": round(m.earnLossConversion(m.shares_owned, m.current_price, m.purchase_price), 2),
-        "yearly_yield": round(m.newYearlyCalc(m.current_price, m.purchase_price), 2),
-        "id": m.id
-    }
-
-    stocks_dict["f"] = {
-        "symbol": f.symbol,
-        "shares": f.shares_owned,
-        "purchase_price": f.purchase_price,
-        "current_price": f.current_price,
-        "purchase_date": f.purchase_date,
-        "current_date": f.currentDate(),
-        "earn_loss": round(f.earnLossConversion(f.shares_owned, f.current_price, f.purchase_price), 2),
-        "yearly_yield": round(f.newYearlyCalc(f.current_price, f.purchase_price), 2),
-        "id": f.id
-    }
-
-    stocks_dict["ibm"] = {
-        "symbol": ibm.symbol,
-        "shares": ibm.shares_owned,
-        "purchase_price": ibm.purchase_price,
-        "current_price": ibm.current_price,
-        "purchase_date": ibm.purchase_date,
-        "current_date": ibm.currentDate(),
-        "earn_loss": round(ibm.earnLossConversion(ibm.shares_owned, ibm.current_price, ibm.purchase_price), 2),
-        "yearly_yield": round(ibm.newYearlyCalc(ibm.current_price, ibm.purchase_price), 2),
-        "id": ibm.id
-    }
-
-    # Outputs a new Line to the console to separate the bash command.
-    print("\n")
-
-    # Prints out User information stored in the Bob Variable and calling the Full name attribute
-    # Uses String format concatenation
-    print("Stock information for {0}".format(user_bob.full_name))
-
-    # Loop Through titles variable and print out the table headers
-    for title in titles:
-        print(title, end=' | ')
-
-    # Print New Line
-    print("\n")
-
-    # Loop Through Entire Dictionary
-    for key, val in stocks_dict.items():
-        # print(key.upper())
-        # Assigns Iterated Values to each new variable declaration for every iteration
-        symbol = val["symbol"]
-        shares = val["shares"]
-        purchase = val["purchase_price"]
-        current = val["current_price"]
-        earn_loss = round(val["earn_loss"], 2)
-        yearly_yield = val["yearly_yield"]
-        id = val["id"]
-        purchase_date = "8/1/2018"
-        final_print = "{0:2d} | {1:6s} | {2:8d} | ${3:<7.2f} | ${4:<6.2f} | ${5:<8.2f} | {6:13s} | {7:18.2f}% | {8:13s} | ".format(
-            id,
-            symbol.upper(),
-            shares,
-            purchase,
-            current,
-            earn_loss,
-            purchase_date,
-            yearly_yield,
-            purchase_date
-        )
-
-        buildTable(final_print)
-
-
-    # Some Error Handling
-    for key in stocks_dict:
-        try:
-            stocks_dict[key]
-        except KeyError as err:
-            print('KeyError: stocks_dict has no key', err)
+        stocks_dict["m"] = {
+            "symbol": m.symbol,
+            "shares": m.shares_owned,
+            "purchase": m.purchase_price,
+            "current": m.current_price,
+            "current_date": m.currentDate(),
+            "earn_loss": round(m.earnLossConversion(m.shares_owned, m.current_price, m.purchase_price), 2)
+        }
 
 
 
-    # Print Bond Information for Bob Smith
-    print("\n\nBond Information for {0}\n-------------------------------".format(user_bob.full_name))
+        with open('mod6_output.txt', 'w') as wf:
+            wf.write("Stock Portfolio Information for {0}\n-----------------------\n".format(user_bob.full_name))
+            wf.write("{0}".format(stocks_dict))
 
-    # List of Bob Smith's Bond Information (Ordered)
-    bob_smith_bond_info = [
-        bob_smith_bond.symbol,
-        bob_smith_bond.purchase_price,
-        bob_smith_bond.current_price,
-        bob_smith_bond.quantity,
-        bob_smith_bond.coupon,
-        bob_smith_bond.yield_amt_pct,
-        bob_smith_bond.purchase_date
-    ]
 
-    # Simple Error Checking for Bob_Smith_Bond_Info List
-    for val in bob_smith_bond_info:
-        if val not in bob_smith_bond_info:
-            exit()
-        else:
-            pass
 
-    # print("ID: {0}".format(bob_smith_bond.id))
-    # print("Symbol: {0}".format(bob_smith_bond.symbol))
-    # print("Purchase Price: ${0}".format(bob_smith_bond.purchase_price))
-    # print("Current Price: ${0}".format(bob_smith_bond.current_price))
-    # print("Quantity: {0}".format(bob_smith_bond.quantity))
-    # print("Coupon: {0}".format(bob_smith_bond.coupon))
-    # print("Yield: {0}%".format(bob_smith_bond.yield_amt_pct))
-    # print("Purchase Date: {0}".format(bob_smith_bond.purchase_date))
+
+        # Close Reading File
+        rf.close()
 
 
 
 # Main Function
 def main():
     code_run()
-
-
-
 
 # Main Function Call
 if __name__ == '__main__':
