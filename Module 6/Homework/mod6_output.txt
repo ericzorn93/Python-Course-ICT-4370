@@ -1,3 +1,25 @@
 Stock Portfolio Information for Bob Smith
 -----------------------
-{'goog': {'symbol': 'GOOGL', 'shares': 125, 'purchase': 772.88, 'current': 941.53, 'current_date': '01/29/2018', 'earn_loss': 21081.25}, 'msft': {'symbol': 'MSFT', 'shares': 85, 'purchase': 56.6, 'current': 73.04, 'current_date': '01/29/2018', 'earn_loss': 1397.4}, 'rds-a': {'symbol': 'RDS-A', 'shares': 400, 'purchase': 49.58, 'current': 55.74, 'current_date': '01/29/2018', 'earn_loss': 2464.0}, 'aig': {'symbol': 'AIG', 'shares': 235, 'purchase': 54.21, 'current': 65.27, 'current_date': '01/29/2018', 'earn_loss': 2599.1}, 'fb': {'symbol': 'FB', 'shares': 150, 'purchase': 124.31, 'current': 172.45, 'current_date': '01/29/2018', 'earn_loss': 7221.0}, 'm': {'symbol': 'M', 'shares': 425, 'purchase': 30.3, 'current': 23.98, 'current_date': '01/29/2018', 'earn_loss': -2686.0}}
+SYMBOL | NO_SHARES | PURCHASE_PRICE | CURRENT_VALUE | PURCHASE_DATE | YEARLY EARN/LOSS | YIELD | 
+
+GOOGL |        125 |  $      772.88 |  $     941.53 |  01/29/2018   |  $      21081.25 |   21.82 | 
+MSFT  |         85 |  $        56.6 |  $      73.04 |  01/29/2018   |  $        1397.4 |   29.05 | 
+RDS-A |        400 |  $       49.58 |  $      55.74 |  01/29/2018   |  $        2464.0 |   12.42 | 
+AIG   |        235 |  $       54.21 |  $      65.27 |  01/29/2018   |  $        2599.1 |    20.4 | 
+FB    |        150 |  $      124.31 |  $     172.45 |  01/29/2018   |  $        7221.0 |   38.73 | 
+M     |        425 |  $        30.3 |  $      23.98 |  01/29/2018   |  $       -2686.0 |  -20.86 | 
+F     |         85 |  $       12.58 |  $      10.95 |  01/29/2018   |  $       -138.55 |  -12.96 | 
+IBM   |         80 |  $      150.37 |  $      145.3 |  01/29/2018   |  $        -405.6 |   -3.37 | 
+
+
+
+Bonds Information for Bob Smith
+--------------------------
+ID: 10
+Symbol: GT2:GOV
+Purchase Price: $100.02
+Current Price: $100.05
+Quantity: 200
+Coupon: 1.38
+Yield: 1.35%
+Purchase Date: 08/01/2017
