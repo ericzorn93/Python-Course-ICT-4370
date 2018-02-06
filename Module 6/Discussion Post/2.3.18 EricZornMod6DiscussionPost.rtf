@@ -1,0 +1,52 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red34\green45\blue53;\red255\green255\blue255;\red183\green111\blue179;
+\red23\green23\blue23;\red202\green202\blue202;\red79\green123\blue61;\red194\green126\blue101;\red212\green214\blue154;
+\red70\green137\blue204;}
+{\*\expandedcolortbl;;\cssrgb\c17647\c23137\c27059;\cssrgb\c100000\c100000\c100000;\cssrgb\c77255\c52549\c75294;
+\cssrgb\c11765\c11765\c11765;\cssrgb\c83137\c83137\c83137;\cssrgb\c37647\c54510\c30588;\cssrgb\c80784\c56863\c47059;\cssrgb\c86275\c86275\c66667;
+\cssrgb\c33725\c61176\c83922;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid1\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww13800\viewh18000\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\b\fs32 \cf2 \cb3 \expnd0\expndtw0\kerning0
+Find Python libraries that enable the programmer to work with files other than text and json files (for example spreadsheets, databases, online protocols, or other file formats). List the link to the library, and a short description on what it allows you to access and why you find it helpful. Give a brief usage example.\
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8259 	}LINK: {\field{\*\fldinst{HYPERLINK "http://docs.python-requests.org/en/master/user/quickstart/#make-a-request"}}{\fldrslt http://docs.python-requests.org/en/master/user/quickstart/#make-a-request }}\
+\ls1\ilvl0
+\b0 {\listtext	\uc0\u8259 	}One of the most widely used libraries for handling HTTP requests in the simplest of ways with Python is known simply as Requests. If you have ever used other languages that heavily deal with HTTP requests, such as JavaScript or PHP, you would see a common trend with the syntax between the languages and the library Requests in Python. It is commonly used in Python3. The most common uses for this library are for interacting with different web APIs, setting PHP headers, retrieving JSON text, setting cookies, SSL verification, URL redirection and domain name retrieval, proxy support and many other forms of HTTP. In this course so far, we have been using client-side Python and have been only writing scripts that will run locally. We have not learned yet how to use Python for HTTP web requests, but this can make posting and retrieving data to an application much more interesting and create dynamic applications. This allows us to be able to pull constantly updated information from the internet to our application that has been programmed in Python. Commonly, the response text from an API is going to be in the format of JSON. Using other modules in Python like the JSON module allow for parsing the information retrieved from a GET request in a much simpler way to then be looped over or stored into a variable for further parsing. Commonly, in languages like PHP, HTTP is handled for database retrieval or posting, component imports, API retrieval, and much more. HTTP alone is very powerful and can do many of the same things in Python, once the developer understands the syntax behind HTTP protocol. Python can handle HTTP requests and posting on its own with the HTTP protocol client, but it can tend to become confusing when higher-level HTTP interfacing is needed, as said by {\field{\*\fldinst{HYPERLINK "https://docs.python.org/3/library/http.client.html"}}{\fldrslt https://docs.python.org/3/library/http.client.html}}. In this case, the documentation states that using the Requests Library/Package is much easier and smarter for the developer. As I have mentioned above, I have not yet used HTTP in Python, but have used it now many times in JavaScript and now within my PHP course. Below is an example in Python of the Open Free Weather API to retrieve some JSON formatted information with a GET request. All information retrieved has been from the Requests Module and formatted with the built-in Python JSON module. When printing a formatted string, the data will dynamically change depending on the updated weather data being provided by the API. A quick article of information regarding HTTP, a GET request will either post information or retrieve information directly from the URL. The POST method will send or retrieve data privately. When handling user input through a form or command line, for security purposes, it is smarter to use the POST method.\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1\fs24 \cf4 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 \
+import\cf6 \strokec6  requests\cb1 \
+\cf4 \cb5 \strokec4 import\cf6 \strokec6  json\cb1 \
+\
+\cf7 \cb5 \strokec7 # Simple Get Request to the Open Weather API\cf6 \cb1 \strokec6 \
+\cb5 r = requests.get(\cf8 \strokec8 'http://samples.openweathermap.org/data/2.5/weather?q=London&appid=b6907d289e10d714a6e88b30761fae22'\cf6 \strokec6 )\cb1 \
+\
+\cf7 \cb5 \strokec7 # Parses Text Response from JSON data in the Open Weather API\cf6 \cb1 \strokec6 \
+\cb5 j = json.loads(r.text)\cb1 \
+\
+\cf7 \cb5 \strokec7 # Retrieved clouds key from JSON dictionary and value of clouds dictionary\cf6 \cb1 \strokec6 \
+\cb5 amt_clouds = j[\cf8 \strokec8 'clouds'\cf6 \strokec6 ][\cf8 \strokec8 'all'\cf6 \strokec6 ]\cb1 \
+\
+\cf7 \cb5 \strokec7 # Prints a formatted string of cloud information from the API that is dynamically updated\cf6 \cb1 \strokec6 \
+\cf9 \cb5 \strokec9 print\cf6 \strokec6 (\cf8 \strokec8 "There are \cf10 \strokec10 \{0\}\cf8 \strokec8  clouds outside right now"\cf6 \strokec6 .format(amt_clouds))\cb1 \
+\
+\
+\
+\pard\tx720\pardeftab720\partightenfactor0
+
+\f0\fs32 \cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\
+	Here is a unique video of a developer using the Requests library for the Python Flask Framework: {\field{\*\fldinst{HYPERLINK "https://www.youtube.com/watch?v=IrclKk_nWHI"}}{\fldrslt https://www.youtube.com/watch?v=IrclKk_nWHI\
+}}\pard\pardeftab720\partightenfactor0
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\
+}
