@@ -44,9 +44,26 @@ def insert_db_data(conn, query):
     try:
         c = conn.cursor()
         c.execute(query)
+        conn.commit()
+        conn.close()
     except Error as e:
         print(e)
 
     return None
 
+
+def query_data_db(conn, query):
+    """
+    Executes the command and will then query the specified data from the query
+    :param conn: Database Connection
+    :param query: Runs SQL Query command on the SQLite3 Database
+    :return: None
+    """
+    try:
+        cursor = conn.cursor()
+        cursor.execute(query)
+        conn.commit()
+        return cursor.fetchall()
+    except Error as e:
+        print(e)
 

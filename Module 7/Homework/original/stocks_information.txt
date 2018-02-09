@@ -1,0 +1,5 @@
+Stock Information for Bob Smith
+------------------
+
+ID           | Symbol       | # Shares     | Purchase     | Current      | Earn/Loss    | Purchase Date | Yearly Earning/Loss | Purchase Date | 
+
