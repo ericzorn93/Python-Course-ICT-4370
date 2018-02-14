@@ -6,7 +6,7 @@
 # Import All from Other Module
 import sqlite3
 import csv
-from Eric_Zorn_mod7_classes_week7 import Investor, Bonds, StockData, buildTable
+from Eric_Zorn_mod7_classes_week7 import Investor, Bonds, StockData
 from Eric_Zorn_mod7_dbconnect_week7 import create_connection, create_db_table, insert_db_data, query_data_db
 
 # ID Header
@@ -29,145 +29,14 @@ def code_run():
         "Current",
         "Earn/Loss",
         "Purchase Date",
-        "Yearly Earning/Loss",
-        "Purchase Date"
+        "Yearly Earning/Loss"
     )
 
 
     with open('Lesson7_Data_Bonds.csv', 'r') as file:
         info = csv.reader(file)
 
-
-    # stocks_list = []
-    # """
-    # stocks_list.append(goog)
-    # stocks_list.append(msft)
-    # stocks_list.append(rds_a)
-    # stocks_list.append(aig)
-    # stocks_list.append(fb)
-    # stocks_list.append(m)
-    # stocks_list.append(f)
-    # stocks_list.append(ibm)
-    # stocks_list.append(appl)
-    # """
-    #
-    #
-    # #################################
-    #
-    # # Outputs a new Line to the console to separate the bash command.
-    # print("\n")
-    #
-    # # Prints out User information stored in the Bob Variable and calling the Full name attribute
-    # # Uses String format concatenation
-    # print(
-    #     "\n\nBond Information for {0}.\nBob's phone number is {1} and his address is {2}\n-----------------------------"
-    #         .format(
-    #         user_bob.full_name, user_bob.phone_number, user_bob.address)
-    # )
-    #
-    # # Loop Through titles variable and print out the table headers
-    # for title in titles:
-    #     print(title, end=' | ')
-    #
-    # # Print New Line
-    # print("\n")
-    #
-    # # Loop Through Entire Dictionary
-    # for key, val in stocks_dict.items():
-    #     # print(key.upper())
-    #     # Assigns Iterated Values to each new variable declaration for every iteration
-    #     symbol = val["symbol"]
-    #     shares = val["shares"]
-    #     purchase = val["purchase_price"]
-    #     current = val["current_price"]
-    #     earn_loss = round(val["earn_loss"], 2)
-    #     yearly_yield = val["yearly_yield"]
-    #     id = val["id"]
-    #     purchase_date = "8/1/2018"
-    #     final_print = "{0:2d} | {1:6s} | {2:8d} | ${3:<7.2f} | ${4:<6.2f} | ${5:<8.2f} | {6:13s} | {7:18.2f}% | {8:13s} | ".format(
-    #         id,
-    #         symbol.upper(),
-    #         shares,
-    #         purchase,
-    #         current,
-    #         earn_loss,
-    #         purchase_date,
-    #         yearly_yield,
-    #         purchase_date
-    #     )
-    #
-    #     buildTable(final_print)
-    #
-    # # Print Steve Jobs Stock Information
-    # print(
-    #     "\n\nStock Information for {0}.\nHis phone number is {1} and his address is {2}\n-----------------------------"
-    #         .format(
-    #         user_steve.full_name, user_steve.phone_number, user_steve.address)
-    # )
-    #
-    # # Loop Through titles variable and print out the table headers
-    # print("{0} | {1} | {2} |".format(titles[1], titles[2], titles[6]))
-    # print("{0:6} | {1:8} | {2:13} |".format(apple_dict['appl']["symbol"], apple_dict['appl']["shares"], apple_dict['appl']["purchase_date"]))
-    #
-    #
-    # # Some Error Handling in Stocks Dictionary
-    # for key in stocks_dict:
-    #     try:
-    #         stocks_dict[key]
-    #     except KeyError as err:
-    #         print('KeyError: stocks_dict has no key', err)
-    #
-    #
-    #
-    # # Print Bond Information for Bob Smith
-    # print("\n\nBond Information for {0}.\nBob's phone number is {1} and his address is {2}\n---------------------------"
-    #     .format(
-    #     user_bob.full_name, user_bob.phone_number, user_bob.address)
-    # )
-    #
-    # # List of Bob Smith's Bond Information (Ordered)
-    # bob_smith_bond_info = [
-    #     bob_smith_bond.symbol,
-    #     bob_smith_bond.purchase_price,
-    #     bob_smith_bond.current_price,
-    #     bob_smith_bond.quantity,
-    #     bob_smith_bond.coupon,
-    #     bob_smith_bond.yield_amt_pct,
-    #     bob_smith_bond.purchase_date
-    # ]
-    #
-    # # Simple Error Checking for Bob_Smith_Bond_Info List
-    # try:
-    #     for val in bob_smith_bond_info:
-    #         if val not in bob_smith_bond_info:
-    #             raise ValueError("Value is not in Bob Smith's Stock Information")
-    #         else:
-    #             pass
-    # except ValueError:
-    #     print("Value is not in Bob Smith's Stock Information")
-    #
-    # # Print Bonds Table
-    # print("ID: {0}".format(bob_smith_bond.id))
-    # print("Symbol: {0}".format(bob_smith_bond.symbol))
-    # print("Purchase Price: ${0}".format(bob_smith_bond.purchase_price))
-    # print("Current Price: ${0}".format(bob_smith_bond.current_price))
-    # print("Quantity: {0}".format(bob_smith_bond.quantity))
-    # print("Coupon: {0}".format(bob_smith_bond.coupon))
-    # print("Yield: {0}%".format(bob_smith_bond.yield_amt_pct))
-    # print("Purchase Date: {0}".format(bob_smith_bond.purchase_date))
-    # bob_smith_bond.readValues()
-    #
-    #
-    # print("\n")
-
-
-
-
-
-
-
-
-
+        # Code from Additional.py can be added here if needed
 
     """ Database Connections Using SQLite3"""
 
@@ -213,129 +82,138 @@ def code_run():
 
 
 
-    """
-    create_db_table(conn, create_investor_table)
-    create_db_table(conn, create_stock_table)
-    create_db_table(conn, create_bond_table)
-    """
-
-    """
-    # Insert User 1
-    user_bob_db_insert = "INSERT INTO investors VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')".format(
-        user_bob.id,
-        user_bob.first_name,
-        user_bob.last_name,
-        user_bob.full_name,
-        user_bob.address,
-        user_bob.phone_number
-    )
-
-    # Insert User 2
-    user_steve_db_insert = "INSERT INTO investors VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')".format(
-        user_steve.id,
-        user_steve.first_name,
-        user_steve.last_name,
-        user_steve.full_name,
-        user_steve.address,
-        user_steve.phone_number
-    )
-
-    conn = sqlite3.connect(databaseConn)
-    cursor = conn.cursor()
+    try:
+        create_db_table(conn, create_investor_table)
+        create_db_table(conn, create_stock_table)
+        create_db_table(conn, create_bond_table)
+        """
     
-    """
+        """
+        # Insert User 1
+        user_bob_db_insert = "INSERT INTO investors VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')".format(
+            user_bob.id,
+            user_bob.first_name,
+            user_bob.last_name,
+            user_bob.full_name,
+            user_bob.address,
+            user_bob.phone_number
+        )
 
-    """
-    # Database Execution for Investors
-    # cursor.execute(user_bob_db_insert)
-    # cursor.execute(user_steve_db_insert)
-    """
+        # Insert User 2
+        user_steve_db_insert = "INSERT INTO investors VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')".format(
+            user_steve.id,
+            user_steve.first_name,
+            user_steve.last_name,
+            user_steve.full_name,
+            user_steve.address,
+            user_steve.phone_number
+        )
+
+        conn = sqlite3.connect(databaseConn)
+        cursor = conn.cursor()
+    
+    except:
+        pass
+
+    # Attempt Database Investor Important
+    try:
+        # Database Execution for Investors
+        cursor.execute(user_bob_db_insert)
+        cursor.execute(user_steve_db_insert)
+    except:
+        pass
+
 
 
     # Database Insertion for Bonds from User Bob Smith
-    # user_steve__bonds__insert = "INSERT INTO bonds VALUES ('{0}', '{1}', '{2}', '{3}', '{4}')".format(
-    #     bob_smith_bond.id,
-    #     bob_smith_bond.quantity,
-    #     bob_smith_bond.shares_owned,
-    #     bob_smith_bond.coupon,
-    #     bob_smith_bond.yield_amt_pct
-    # )
+    try:
+        user_steve__bonds__insert = "INSERT INTO bonds VALUES ('{0}', '{1}', '{2}', '{3}', '{4}')".format(
+            bob_smith_bond.id,
+            bob_smith_bond.quantity,
+            bob_smith_bond.shares_owned,
+            bob_smith_bond.coupon,
+            bob_smith_bond.yield_amt_pct
+        )
 
-    # Insert Bonds Data
-    # insert_db_data(conn, user_steve__bonds__insert)
+        # Insert Bonds Data
+        insert_db_data(conn, user_steve__bonds__insert)
 
 
-    #Stock Inserts
-    # goog_insert = "INSERT INTO stocks VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')".format(
-    #     goog.id,
-    #     goog.symbol,
-    #     goog.shares_owned,
-    #     goog.purchase_price,
-    #     goog.current_price,
-    #     goog.purchase_date
-    # )
-    #
-    # msft_insert = "INSERT INTO stocks VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')".format(
-    #     msft.id,
-    #     msft.symbol,
-    #     msft.shares_owned,
-    #     msft.purchase_price,
-    #     msft.current_price,
-    #     msft.purchase_date
-    # )
-    #
-    # rds_a_insert = "INSERT INTO stocks VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')".format(
-    #     rds_a.id,
-    #     rds_a.symbol,
-    #     rds_a.shares_owned,
-    #     rds_a.purchase_price,
-    #     rds_a.current_price,
-    #     rds_a.purchase_date
-    # )
-    #
-    # aig_insert = "INSERT INTO stocks VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')".format(
-    #     aig.id,
-    #     aig.symbol,
-    #     aig.shares_owned,
-    #     aig.purchase_price,
-    #     aig.current_price,
-    #     aig.purchase_date
-    # )
-    #
-    # fb_insert = "INSERT INTO stocks VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')".format(
-    #     fb.id,
-    #     fb.symbol,
-    #     fb.shares_owned,
-    #     fb.purchase_price,
-    #     fb.current_price,
-    #     fb.purchase_date
-    # )
-    #
-    # m_insert = "INSERT INTO stocks VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')".format(
-    #     m.id,
-    #     m.symbol,
-    #     m.shares_owned,
-    #     m.purchase_price,
-    #     m.current_price,
-    #     m.purchase_date
-    # )
+        # Stock Inserts
+        goog_insert = "INSERT INTO stocks VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')".format(
+            goog.id,
+            goog.symbol,
+            goog.shares_owned,
+            goog.purchase_price,
+            goog.current_price,
+            goog.purchase_date
+        )
+
+        msft_insert = "INSERT INTO stocks VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')".format(
+            msft.id,
+            msft.symbol,
+            msft.shares_owned,
+            msft.purchase_price,
+            msft.current_price,
+            msft.purchase_date
+        )
+
+        rds_a_insert = "INSERT INTO stocks VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')".format(
+            rds_a.id,
+            rds_a.symbol,
+            rds_a.shares_owned,
+            rds_a.purchase_price,
+            rds_a.current_price,
+            rds_a.purchase_date
+        )
+
+        aig_insert = "INSERT INTO stocks VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')".format(
+            aig.id,
+            aig.symbol,
+            aig.shares_owned,
+            aig.purchase_price,
+            aig.current_price,
+            aig.purchase_date
+        )
+
+        fb_insert = "INSERT INTO stocks VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')".format(
+            fb.id,
+            fb.symbol,
+            fb.shares_owned,
+            fb.purchase_price,
+            fb.current_price,
+            fb.purchase_date
+        )
+
+        m_insert = "INSERT INTO stocks VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')".format(
+            m.id,
+            m.symbol,
+            m.shares_owned,
+            m.purchase_price,
+            m.current_price,
+            m.purchase_date
+        )
+    except UnboundLocalError:
+        print("Google has not be defined as a Stock Object")
+
 
     # Insert Stock Data
-    """
-    for val in stocks_list:
-        try:
-            insert_data = "INSERT INTO stocks VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')".format(
-                val.id,
-                val.symbol,
-                val.shares_owned,
-                val.purchase_price,
-                val.current_price,
-                val.purchase_date
-            )
-            insert_db_data(conn, insert_data)
-        except IndexError:
-            pass # Simple Error Handling
-    """
+    try:
+        for val in stocks_list:
+            try:
+                insert_data = "INSERT INTO stocks VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')".format(
+                    val.id,
+                    val.symbol,
+                    val.shares_owned,
+                    val.purchase_price,
+                    val.current_price,
+                    val.purchase_date
+                )
+                insert_db_data(conn, insert_data)
+            except IndexError:
+                pass # Simple Error Handling
+    except NameError:
+        print("Stocks List has already been defined")
 
 
 
@@ -358,7 +236,7 @@ def code_run():
             "Earn/Loss",
             "Purchase Date",
             "Yearly Earning/Loss",
-            "Purchase Date"
+            "Annual Yield"
         )
 
         # Stock Query
@@ -381,23 +259,28 @@ def code_run():
         conn = sqlite3.connect('stock_info.db')
         cursor = conn.cursor()
 
-        """
-        for stock in stocks:
-            query = "INSERT INTO stocks VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')".format(
-                stock.id,
-                stock.symbol,
-                stock.shares_owned,
-                stock.purchase_price,
-                stock.current_price,
-                stock.purchase_date
-            )
-            # Error Handling
-            try:
-                cursor.execute(query)
-                conn.commit()
-            except sqlite3.OperationalError:
-                print("This query has already been completed")
-        """
+        # Error handling for Stock Query
+        try:
+            for stock in stocks:
+                query = "INSERT INTO stocks VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')".format(
+                    stock.id,
+                    stock.symbol,
+                    stock.shares_owned,
+                    stock.purchase_price,
+                    stock.current_price,
+                    stock.purchase_date
+                )
+                # Error Handling
+                try:
+                    cursor.execute(query)
+                    conn.commit()
+                except sqlite3.OperationalError:
+                    print("This query has already been completed")
+
+        except sqlite3.IntegrityError:
+            print("The query has already been completed")
+            pass
+
 
 
         # Dictionary Declaration
@@ -536,8 +419,7 @@ def code_run():
         # Attempt to Print Table
         for val in stocks_dict.values():
             try:
-                #final_print = "{0:2d} | {1:6s} | {2:8d} | ${3:<7.2f} | ${4:<6.2f} | ${5:<8.2f} | {6:13s} | {7:18.2f}% | {8:13s} | ".format(
-                final_print = "{0:2d} | {1:6s} | {2:8d} | ${3:<7.2f} | ${4:<6.2f} | ${5:13s} | {6:13s} | {7:18.2f}% | {8:18.2f} | \n".format(
+                final_print = "{0:12d} | {1:12s} | {2:12d} | ${3:<11.2f} | ${4:<11.2f} | ${5:11s} | {6:13s} | ${7:18.2f} | {8:11.2f}% | \n".format(
                         val["id"],
                         val["symbol"],
                         val["shares"],
@@ -556,15 +438,64 @@ def code_run():
 
 
 
+    # Assign Bond Information
+    with open('Lesson7_Data_Bonds.csv', 'r') as bonds_file_csv:
+        # Assigns User Bonds for Bob Smith
+        reader = csv.reader(bonds_file_csv)
+        bond_list = list(reader)
+        bob_smith_bond = Bonds(bond_list[1][0], bond_list[1][2], bond_list[1][3], bond_list[1][4], bond_list[1][5], bond_list[1][6])
+
+    with open('stocks_information.txt', 'a') as open_file:
+        try:
+            open_file.write("\n\n")
+            open_file.write("{0}'s Bond Information\n----------------------\n".format(user_bob.full_name))
+            open_file.write(
+                "ID: {0}\nSymbol: {1}\nPurchase Price: ${2}\nCurrent Price: ${3}\nQuantity: {4}\nCoupon: {5}\nYield: {6}%\nPurchase Date: {7}".format(
+                    bob_smith_bond.id,
+                    bob_smith_bond.symbol,
+                    bob_smith_bond.purchase_price,
+                    bob_smith_bond.current_price,
+                    bob_smith_bond.quantity,
+                    bob_smith_bond.coupon,
+                    bob_smith_bond.yield_amt_pct,
+                    bob_smith_bond.purchase_date
+                )
+            )
+
+            # Write New Line
+            open_file.write("\n\n\n")
+
+            open_file.write("Stock Information for {0}.\n---------------------\n\n".format(user_steve.full_name))
+
+            # Print Titles Again
+            for title in titles:
+                open_file.write("{0:12} | ".format(title))
 
 
+            # Write New Line
+            open_file.write("\n\n")
+            # Write Steve Jobs Stock Information
+            open_file.write("{0:12d} | {1:12s} | {2:12d} | {3:1f} | {4:2f} | {5:2s} | {6:10s} | {7:24f} | {8}".format(
+                apple_dict["appl"]["id"],
+                apple_dict["appl"]["symbol"],
+                apple_dict["appl"]["shares"],
+                apple_dict["appl"]["purchase_price"],
+                apple_dict["appl"]["current_price"],
+                apple_dict["appl"]["purchase_date"],
+                apple_dict["appl"]["current_date"],
+                apple_dict["appl"]["earn_loss"],
+                apple_dict["appl"]["earn_loss"],
+                apple_dict["appl"]["yearly_yield"],
+            ))
+
+
+        except ValueError as e:
+            print(e)
 
 
 # Main Function
 def main():
     code_run()
-
-
 
 
 # Main Function Call

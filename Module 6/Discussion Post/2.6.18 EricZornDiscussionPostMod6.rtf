@@ -1,0 +1,158 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf200
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Italic;
+}
+{\colortbl;\red255\green255\blue255;\red34\green45\blue53;\red255\green255\blue255;\red79\green123\blue61;
+\red23\green23\blue23;\red202\green202\blue202;\red70\green137\blue204;\red67\green192\blue160;\red212\green214\blue154;
+\red140\green211\blue254;\red194\green126\blue101;\red183\green111\blue179;\red167\green197\blue152;\red81\green136\blue67;
+\red32\green32\blue32;\red109\green109\blue109;\red191\green100\blue38;\red153\green168\blue186;\red86\green132\blue173;
+\red117\green114\blue185;\red88\green118\blue71;\red152\green54\blue29;}
+{\*\expandedcolortbl;;\cssrgb\c17647\c23137\c27059;\cssrgb\c100000\c100000\c100000;\cssrgb\c37647\c54510\c30588;
+\cssrgb\c11765\c11765\c11765;\cssrgb\c83137\c83137\c83137;\cssrgb\c33725\c61176\c83922;\cssrgb\c30588\c78824\c69020;\cssrgb\c86275\c86275\c66667;
+\cssrgb\c61176\c86275\c99608;\cssrgb\c80784\c56863\c47059;\cssrgb\c77255\c52549\c75294;\cssrgb\c70980\c80784\c65882;\csgenericrgb\c31765\c53333\c26275;
+\csgenericrgb\c12549\c12549\c12549;\csgenericrgb\c42745\c42745\c42745;\csgenericrgb\c74902\c39216\c14902;\csgenericrgb\c60000\c65882\c72941;\csgenericrgb\c33725\c51765\c67843;
+\csgenericrgb\c45882\c44706\c72549;\csgenericrgb\c34510\c46275\c27843;\csgenericrgb\c59608\c21176\c11373;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid1\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid101\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\margl1440\margr1440\vieww10800\viewh9340\viewkind0
+\deftab720
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f0\b\fs32 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 1. What is\'a0Method Resolution Order? Provide an example.\'a0\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl360\partightenfactor0
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8259 	}
+\b0 Method Resolution Order is simply the order in which base classes are searched when looking for a method. The acronym is also commonly referred to as MRO. MRO applies to mainly languages that use multiple inheritance like Python or Java. Multiple inheritance is when a class can inherit from another class. The base class, or the originating class, can also be referred to as the parent class. The second class or child class, is the class/object that will be inheriting from the parent class. When defining a child class, the order of the referred parent method will be the main class that Python will check for inheritance. The next object stated as a parent will be checked if the first one returns false. This will continue for the remainder of the listed parent classes for inheritance. If there is a method or attribute that is found within the child class, it will not check for further inheritance from the different parent classes. In simpler terms, if the method is found within the child class, it will execute. If not, Python will search for the method within each inherited parent class. The first class that has the method defined, will execute. Below is a very basic example of what Method Resolution order truly is. Here are some example links: {\field{\*\fldinst{HYPERLINK "https://youtu.be/N40wT_JEsQQ"}}{\fldrslt https://youtu.be/N40wT_JEsQQ}} and {\field{\*\fldinst{HYPERLINK "https://makina-corpus.com/blog/metier/2014/python-tutorial-understanding-python-mro-class-search-path"}}{\fldrslt https://makina-corpus.com/blog/metier/2014/python-tutorial-understanding-python-mro-class-search-path}}. \
+\pard\tx720\pardeftab720\sl360\partightenfactor0
+\cf2 \
+Method Order Resolution Example\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1\fs24 \cf4 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 # Base Class\cf6 \cb1 \strokec6 \
+\cf7 \cb5 \strokec7 class\cf6 \strokec6  \cf8 \strokec8 Alpha\cf6 \strokec6 (\cf8 \strokec8 object\cf6 \strokec6 ):\cb1 \
+\cb5     \cf7 \strokec7 def\cf6 \strokec6  \cf9 \strokec9 method\cf6 \strokec6 (\cf10 \strokec10 self\cf6 \strokec6 ):\cb1 \
+\cb5         \cf9 \strokec9 print\cf6 \strokec6 (\cf11 \strokec11 "method() from Alpha..."\cf6 \strokec6 )\cb1 \
+\cf4 \cb5 \strokec4 # Child Class\cf6 \cb1 \strokec6 \
+\cf7 \cb5 \strokec7 class\cf6 \strokec6  \cf8 \strokec8 Bravo\cf6 \strokec6 :\cb1 \
+\cb5     \cf7 \strokec7 def\cf6 \strokec6  \cf9 \strokec9 method\cf6 \strokec6 (\cf10 \strokec10 self\cf6 \strokec6 ):\cb1 \
+\cb5         \cf9 \strokec9 print\cf6 \strokec6 (\cf11 \strokec11 "method() from Bravo..."\cf6 \strokec6 )\cb1 \
+\cf4 \cb5 \strokec4 # Second Inherited Child Class (Inherits from Alpha and Bravo)\cf6 \cb1 \strokec6 \
+\cf7 \cb5 \strokec7 class\cf6 \strokec6  \cf8 \strokec8 Charlie\cf6 \strokec6 (\cf8 \strokec8 Bravo\cf6 \strokec6 , \cf8 \strokec8 Alpha\cf6 \strokec6 ):\cb1 \
+\cb5     \cf7 \strokec7 def\cf6 \strokec6  \cf9 \strokec9 method\cf6 \strokec6 (\cf10 \strokec10 self\cf6 \strokec6 ):\cb1 \
+\cb5         \cf9 \strokec9 print\cf6 \strokec6 (\cf11 \strokec11 "method() from Charlie..."\cf6 \strokec6 )\cb1 \
+\cf7 \cb5 \strokec7 def\cf6 \strokec6  \cf9 \strokec9 main\cf6 \strokec6 ():\cb1 \
+\cb5     obj1 = Charlie()\cb1 \
+\cb5     obj1.method()\cb1 \
+\cf12 \cb5 \strokec12 if\cf6 \strokec6  \cf10 \strokec10 __name__\cf6 \strokec6  == \cf11 \strokec11 "__main__"\cf6 \strokec6 :\cb1 \
+\cb5     main()\cb1 \
+\
+\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f0\b\fs32 \cf2 \cb3 \strokec2 2. What is the difference between a class attribute and a instance attribute? Provide an example of each.\'a0\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl360\partightenfactor0
+\ls2\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8259 	}
+\b0 Although both of these variable types are declared in the class object, they both are very different from one another. An instance attribute is going to be assigned a new value with every instance call for a new object. These are often passed as arguments to the __init__ function after the self argument has been declared. The values are then assigned within the constructor as self.argument = argument, or whichever name you will be giving it. A class attribute on the other hand is a variable that will be assigned within the class declaration and will be shared by all instances of the class. They will be assigned the same value for every class. Usually, class attributes stay static or as a constant throughout the class, unless a method is called to change the value of the assigned attribute. Often, class attributes will be assigned at the top of the class, directly after the class header. They also are defined outside of all methods, including the __init__ method, in order to assign it to the global scope. There is no limit on the amount of class or instance attributes that can be made, however, it is important to keep code cleanliness in mind. Here is a helpful link about this topic: {\field{\*\fldinst{HYPERLINK "https://www.python-course.eu/python3_class_and_instance_attributes.php"}}{\fldrslt https://www.python-course.eu/python3_class_and_instance_attributes.php}}.\
+\pard\tx720\pardeftab720\sl360\partightenfactor0
+
+\b \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f1\b0\fs24 \cf7 \cb5 \strokec7 class\cf6 \strokec6  \cf8 \strokec8 MyClass\cf6 \strokec6 (\cf8 \strokec8 object\cf6 \strokec6 ):\cb1 \
+\cb5     \cf4 \strokec4 # Class Attribute\cf6 \cb1 \strokec6 \
+\cb5     age = \cf13 \strokec13 22\cf6 \cb1 \strokec6 \
+\cb5     \cf7 \strokec7 def\cf6 \strokec6  \cf9 \strokec9 __init__\cf6 \strokec6 (\cf10 \strokec10 self\cf6 \strokec6 , \cf10 \strokec10 name\cf6 \strokec6 ):\cb1 \
+\cb5         \cf4 \strokec4 # Instance Attribute\cf6 \cb1 \strokec6 \
+\cb5         \cf7 \strokec7 self\cf6 \strokec6 .name = name\cb1 \
+\cf7 \cb5 \strokec7 def\cf6 \strokec6  \cf9 \strokec9 main\cf6 \strokec6 ():\cb1 \
+\cb5     me = MyClass(\cf11 \strokec11 "Eric"\cf6 \strokec6 )\cb1 \
+\cb5     robert = MyClass(\cf11 \strokec11 "Robert"\cf6 \strokec6 )\cb1 \
+\cb5     \cf9 \strokec9 print\cf6 \strokec6 (me.name)\cb1 \
+\cb5     \cf9 \strokec9 print\cf6 \strokec6 (me.age)\cb1 \
+\cb5     \cf9 \strokec9 print\cf6 \strokec6 (robert.name)\cb1 \
+\cb5     \cf9 \strokec9 print\cf6 \strokec6 (robert.age)\cb1 \
+\cf12 \cb5 \strokec12 if\cf6 \strokec6  \cf10 \strokec10 __name__\cf6 \strokec6  == \cf11 \strokec11 "__main__"\cf6 \strokec6 :\cb1 \
+\cb5     main()\cb1 \
+\pard\tx720\pardeftab720\sl360\partightenfactor0
+
+\f0\b\fs32 \cf2 \cb3 \strokec2 \
+\pard\pardeftab720\sl360\partightenfactor0
+\cf2 3. Write code to create a graph. Use the below data. The graph should be one graph with two lines on it.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\i\b0\fs24 \cf14 \cb15 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 """\
+Eric Zorn - ICT 4370 - Using Matplotlib and Pyplot to create a Graph - 2/6/18\
+"""\
+\
+
+\f1\i0 \cf16 # Imports\
+\cf17 from \cf18 matplotlib \cf17 import \cf18 pyplot \cf17 as \cf18 plt\
+\cf17 import \cf18 datetime\
+\
+\
+\cf16 # Data to be Plotted onto the graph\
+\cf18 open_price  = [\cf19 145.0\cf17 , \cf19 144.43\cf17 , \cf19 145.12\cf17 , \cf19 145.0\cf17 , \cf19 144.81\cf17 , \cf19 145.0\cf17 , \cf19 146.27\cf17 , \cf19 146.57\cf17 , \cf19 147.0\cf17 , \cf19 147.59\cf17 , \cf19 147.53\cf17 , \cf19 150.02\cf17 , \cf19 152.36\cf17 ,\
+               \cf19 153.59\cf17 , \cf19 154.01\cf17 , \cf19 153.7\cf17 , \cf19 153.48\cf17 , \cf19 153.26\cf17 , \cf19 152.91\cf17 , \cf19 152.62\cf17 , \cf19 153.36\cf17 , \cf19 155.77\cf17 , \cf19 153.58\cf17 , \cf19 154.28\cf17 , \cf19 155.35\cf17 , \cf19 155.15\cf17 ,\
+               \cf19 155.0\cf17 , \cf19 154.71\cf17 ,\cf19 154.34\cf17 , \cf19 154.55\cf17 , \cf19 155.79\cf17 , \cf19 154.48\cf17 , \cf19 155.51\cf17 , \cf19 154.23\cf17 , \cf19 153.29\cf17 , \cf19 153.97\cf17 , \cf19 155.44\cf17 , \cf19 154.19\cf17 , \cf19 152.0\cf17 ,\
+               \cf19 151.0\cf17 , \cf19 153.05\cf17 , \cf19 152.0\cf17 , \cf19 151.82\cf17 , \cf19 153.07\cf17 , \cf19 152.8\cf17 , \cf19 152.03\cf17 , \cf19 151.95\cf17 , \cf19 152.85\cf17 , \cf19 153.25\cf17 , \cf19 152.21\cf17 , \cf19 152.57\cf17 , \cf19 152.1\cf17 ,\
+               \cf19 151.01\cf17 , \cf19 150.86\cf17 , \cf19 153.3\cf17 , \cf19 151.66\cf17 , \cf19 150.62\cf17 , \cf19 150.3\cf18 ]\
+\
+\
+close_price = [\cf19 145.16\cf17 , \cf19 144.94\cf17 , \cf19 144.45\cf17 , \cf19 145.3\cf17 , \cf19 144.29\cf17 , \cf19 145.07\cf17 , \cf19 145.36\cf17 , \cf19 146.19\cf17 , \cf19 145.99\cf17 , \cf19 147.08\cf17 , \cf19 147.66\cf17 , \cf19 147.53\cf17 ,\
+               \cf19 154.0\cf17 , \cf19 153.01\cf17 , \cf19 154.24\cf17 , \cf19 153.63\cf17 , \cf19 153.7\cf17 , \cf19 153.19\cf17 , \cf19 153.42\cf17 , \cf19 152.94\cf17 , \cf19 152.36\cf17 , \cf19 153.67\cf17 , \cf19 155.58\cf17 , \cf19 153.83\cf17 ,\
+               \cf19 154.13\cf17 , \cf19 155.32\cf17 , \cf19 154.75\cf17 , \cf19 155.23\cf17 , \cf19 154.11\cf17 , \cf19 154.4\cf17 , \cf19 153.79\cf17 , \cf19 154.95\cf17 , \cf19 154.84\cf17 , \cf19 155.38\cf17 , \cf19 154.22\cf17 , \cf19 153.81\cf17 ,\
+               \cf19 154.25\cf17 , \cf19 155.18\cf17 , \cf19 154.1\cf17 , \cf19 152.1\cf17 , \cf19 150.98\cf17 , \cf19 152.37\cf17 , \cf19 152.41\cf17 , \cf19 152.05\cf17 , \cf19 152.67\cf17 , \cf19 152.63\cf17 , \cf19 151.73\cf17 , \cf19 152.49\cf17 , \cf19 153.2\cf17 ,\
+               \cf19 152.51\cf17 , \cf19 152.03\cf17 , \cf19 152.64\cf17 , \cf19 151.98\cf17 , \cf19 150.78\cf17 , \cf19 150.93\cf17 , \cf19 153.68\cf17 , \cf19 151.51\cf17 , \cf19 150.37\cf18 ]\
+\
+date_list = [datetime.date(\cf19 2017\cf17 , \cf19 8\cf17 , \cf19 4\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 8\cf17 , \cf19 3\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 8\cf17 , \cf19 2\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 8\cf17 , \cf19 1\cf18 )\cf17 ,\
+             \cf18 datetime.date(\cf19 2017\cf17 , \cf19 7\cf17 , \cf19 28\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 7\cf17 , \cf19 27\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 7\cf17 , \cf19 26\cf18 )\cf17 ,\
+             \cf18 datetime.date(\cf19 2017\cf17 , \cf19 7\cf17 , \cf19 25\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 7\cf17 , \cf19 24\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 7\cf17 , \cf19 21\cf18 )\cf17 ,\
+             \cf18 datetime.date(\cf19 2017\cf17 , \cf19 7\cf17 , \cf19 20\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 7\cf17 , \cf19 19\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 7\cf17 , \cf19 18\cf18 )\cf17 ,\
+             \cf18 datetime.date(\cf19 2017\cf17 , \cf19 7\cf17 , \cf19 17\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 7\cf17 , \cf19 14\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 7\cf17 , \cf19 13\cf18 )\cf17 ,\
+             \cf18 datetime.date(\cf19 2017\cf17 , \cf19 7\cf17 , \cf19 12\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 7\cf17 , \cf19 11\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 7\cf17 , \cf19 10\cf18 )\cf17 ,\
+             \cf18 datetime.date(\cf19 2017\cf17 , \cf19 7\cf17 , \cf19 7\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 7\cf17 , \cf19 6\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 7\cf17 , \cf19 5\cf18 )\cf17 ,\
+             \cf18 datetime.date(\cf19 2017\cf17 , \cf19 7\cf17 , \cf19 3\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 6\cf17 , \cf19 30\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 6\cf17 , \cf19 29\cf18 )\cf17 ,\
+             \cf18 datetime.date(\cf19 2017\cf17 , \cf19 6\cf17 , \cf19 28\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 6\cf17 , \cf19 27\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 6\cf17 , \cf19 26\cf18 )\cf17 ,\
+             \cf18 datetime.date(\cf19 2017\cf17 , \cf19 6\cf17 , \cf19 23\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 6\cf17 , \cf19 22\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 6\cf17 , \cf19 21\cf18 )\cf17 ,\
+             \cf18 datetime.date(\cf19 2017\cf17 , \cf19 6\cf17 , \cf19 20\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 6\cf17 , \cf19 19\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 6\cf17 , \cf19 16\cf18 )\cf17 ,\
+             \cf18 datetime.date(\cf19 2017\cf17 , \cf19 6\cf17 , \cf19 15\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 6\cf17 , \cf19 14\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 6\cf17 , \cf19 13\cf18 )\cf17 ,\
+             \cf18 datetime.date(\cf19 2017\cf17 , \cf19 6\cf17 , \cf19 12\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 6\cf17 , \cf19 9\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 6\cf17 , \cf19 8\cf18 )\cf17 ,\
+             \cf18 datetime.date(\cf19 2017\cf17 , \cf19 6\cf17 , \cf19 7\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 6\cf17 , \cf19 6\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 6\cf17 , \cf19 5\cf18 )\cf17 ,\
+             \cf18 datetime.date(\cf19 2017\cf17 , \cf19 6\cf17 , \cf19 2\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 6\cf17 , \cf19 1\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 5\cf17 , \cf19 31\cf18 )\cf17 ,\
+             \cf18 datetime.date(\cf19 2017\cf17 , \cf19 5\cf17 , \cf19 30\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 5\cf17 , \cf19 26\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 5\cf17 , \cf19 25\cf18 )\cf17 ,\
+             \cf18 datetime.date(\cf19 2017\cf17 , \cf19 5\cf17 , \cf19 24\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 5\cf17 , \cf19 23\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 5\cf17 , \cf19 22\cf18 )\cf17 ,\
+             \cf18 datetime.date(\cf19 2017\cf17 , \cf19 5\cf17 , \cf19 19\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 5\cf17 , \cf19 18\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 5\cf17 , \cf19 17\cf18 )\cf17 ,\
+             \cf18 datetime.date(\cf19 2017\cf17 , \cf19 5\cf17 , \cf19 16\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 5\cf17 , \cf19 15\cf18 )\cf17 , \cf18 datetime.date(\cf19 2017\cf17 , \cf19 5\cf17 , \cf19 12\cf18 )]\
+\
+\cf16 # Sort Dates in Order\
+\cf18 date_list.sort()\
+\
+\cf17 with \cf20 open\cf18 (\cf21 'stocks_data.txt'\cf17 , \cf21 'w'\cf18 ) \cf17 as \cf18 file:\
+    file.write(\cf20 str\cf18 (date_list) + \cf21 "\cf17 \\n\cf21 "\cf18 )\
+\
+\
+\cf16 # Plot Data Using Pyplot\
+\cf18 plt.title(\cf21 "Stock Market Prices"\cf18 )\
+plt.xlabel(\cf21 "Date"\cf18 )\
+plt.ylabel(\cf21 "Price"\cf18 )\
+\
+\
+\cf16 # Sets Data, Colors, Axis and Labels for Legend\
+\cf18 ax = plt.gca() \cf16 # grab the current axis\
+\cf18 ax.set_xticklabels(date_list) \cf16 # set the labels to display at those ticks\
+\cf18 plt.plot(open_price\cf17 , \cf22 label\cf18 =\cf21 'Open Prices'\cf17 , \cf22 color\cf18 =\cf21 "red"\cf18 )\
+plt.plot(close_price\cf17 , \cf22 label\cf18 =\cf21 'Closed Prices'\cf17 , \cf22 color\cf18 =\cf21 "blue"\cf18 )\
+\
+\cf16 # Legend Location\
+\cf18 plt.legend(\cf22 loc\cf18 =\cf21 'upper right'\cf18 )\
+\
+\cf16 # Write Graph to file\
+\cf18 plt.savefig(\cf21 '2.6.18 StockDataWrittenFile.png'\cf18 )\
+\
+\cf16 # Display Graph Data\
+\cf18 plt.show()\
+\
+}

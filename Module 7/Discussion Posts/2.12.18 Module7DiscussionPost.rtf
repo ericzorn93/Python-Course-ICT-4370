@@ -1,0 +1,134 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf200
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;\f1\fmodern\fcharset0 Courier-Bold;\f2\fmodern\fcharset0 Courier;
+}
+{\colortbl;\red255\green255\blue255;\red34\green45\blue53;\red255\green255\blue255;\red184\green73\blue12;
+\red249\green249\blue249;\red26\green26\blue26;\red83\green83\blue83;\red50\green91\blue142;\red29\green111\blue63;
+\red0\green0\blue109;\red38\green38\blue38;}
+{\*\expandedcolortbl;;\cssrgb\c17647\c23137\c27059;\cssrgb\c100000\c100000\c100000;\cssrgb\c77647\c36471\c3529;
+\cssrgb\c98039\c98039\c98039;\cssrgb\c13333\c13333\c13333;\cssrgb\c40000\c40000\c40000;\cssrgb\c25098\c43922\c62745;\cssrgb\c12549\c50196\c31373;
+\cssrgb\c0\c0\c50196;\cssrgb\c20000\c20000\c20000;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid1\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid101\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid202\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid301\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid4}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}}
+\margl1440\margr1440\vieww28600\viewh18000\viewkind0
+\deftab720
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f0\b\fs32 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 1. What is a GroupBy operation? Think of an example of why you would need to use a GroupBy operation?\'a0\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl360\partightenfactor0
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8259 	}
+\b0 A group by operation is simply referring to a process involving splitting, applying, or combining data. Splitting is when the data is placed into groups based on a certain criteria. Applying is where a function is applied to each group independently. Combining is where the results are combined and placed into a data structure. In Python, this would be a list or dictionary. The website documentation on the pandas module states that applying data may be the most confusing to understand. 
+\i\b Aggregation
+\i0\b0  is when a summary statistic is going to be generated about each group. It will compute group sums and or group sizes and counts. 
+\i\b Transformation 
+\i0\b0  is used to perform specific computations on a group of data and return indexed data. This might be commonly used for standardizing data within a group, like with a z-score in statistics. 
+\i\b Filtration 
+\i0\b0 is used to discard groups according to a computation on the entire group that would evaluate to True or False. An example of this would be discarding data that belongs to groups with only a few items or discarding data based on the sum or mean. A strong example with this is when using SQL and other database commands to query and select data in a specific format from a specific location within the database. A MySQL or SQLite3 command may look like SELECT user FROM users WHERE user = \'93Jim\'94 AND id = 3. This query returned the specific user named Jim with an ID of 3. All other data was discarded. This can be an idea of filtration. Pandas in Python is often used to output and group data with the the simple groupby methods that can be called on the code. Here is an example provided by the Pandas documentation ({\field{\*\fldinst{HYPERLINK "https://pandas.pydata.org/pandas-docs/stable/groupby.html"}}{\fldrslt https://pandas.pydata.org/pandas-docs/stable/groupby.html}}) below. I personally find that this would be really helpful when dealing with large datasets and needing to query a specific set of data or to order the data properly. During next week\'92s example using the JSON file of stocks, there are tons of data items that will need to be read into the Python file. If we as developers are able to capture that data and sort it into properly set variables and data structures with the pandas group by operation, the data will be handled much easier.\
+\pard\pardeftab720\sl316\partightenfactor0
+
+\f1\b\fs26\fsmilli13200 \cf4 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 In [1]: 
+\f2\b0 \cf6 \strokec6 df \cf7 \strokec7 =\cf6 \strokec6  pd\cf7 \strokec7 .\cf6 \strokec6 DataFrame(\{\cf8 \strokec8 'A'\cf6 \strokec6  : [\cf8 \strokec8 'foo'\cf6 \strokec6 , \cf8 \strokec8 'bar'\cf6 \strokec6 , \cf8 \strokec8 'foo'\cf6 \strokec6 , \cf8 \strokec8 'bar'\cf6 \strokec6 ,\
+
+\f1\b \cf4 \strokec4    ...: 
+\f2\b0 \cf6 \strokec6                           \cf8 \strokec8 'foo'\cf6 \strokec6 , \cf8 \strokec8 'bar'\cf6 \strokec6 , \cf8 \strokec8 'foo'\cf6 \strokec6 , \cf8 \strokec8 'foo'\cf6 \strokec6 ],\
+
+\f1\b \cf4 \strokec4    ...: 
+\f2\b0 \cf6 \strokec6                    \cf8 \strokec8 'B'\cf6 \strokec6  : [\cf8 \strokec8 'one'\cf6 \strokec6 , \cf8 \strokec8 'one'\cf6 \strokec6 , \cf8 \strokec8 'two'\cf6 \strokec6 , \cf8 \strokec8 'three'\cf6 \strokec6 ,\
+
+\f1\b \cf4 \strokec4    ...: 
+\f2\b0 \cf6 \strokec6                           \cf8 \strokec8 'two'\cf6 \strokec6 , \cf8 \strokec8 'two'\cf6 \strokec6 , \cf8 \strokec8 'one'\cf6 \strokec6 , \cf8 \strokec8 'three'\cf6 \strokec6 ],\
+
+\f1\b \cf4 \strokec4    ...: 
+\f2\b0 \cf6 \strokec6                    \cf8 \strokec8 'C'\cf6 \strokec6  : np\cf7 \strokec7 .\cf6 \strokec6 random\cf7 \strokec7 .\cf6 \strokec6 randn(\cf9 \strokec9 8\cf6 \strokec6 ),\
+
+\f1\b \cf4 \strokec4    ...: 
+\f2\b0 \cf6 \strokec6                    \cf8 \strokec8 'D'\cf6 \strokec6  : np\cf7 \strokec7 .\cf6 \strokec6 random\cf7 \strokec7 .\cf6 \strokec6 randn(\cf9 \strokec9 8\cf6 \strokec6 )\})\
+
+\f1\b \cf4 \strokec4    ...: 
+\f2\b0 \cf6 \strokec6 \
+\
+
+\f1\b \cf4 \strokec4 In [2]: 
+\f2\b0 \cf6 \strokec6 df\
+
+\f1\b \cf10 \strokec10 Out[2]: 
+\f2\b0 \cf6 \strokec6 \
+\cf11 \strokec11      A      B         C         D\cf6 \strokec6 \
+\cf11 \strokec11 0  foo    one  0.469112 -0.861849\cf6 \strokec6 \
+\cf11 \strokec11 1  bar    one -0.282863 -2.104569\cf6 \strokec6 \
+\cf11 \strokec11 2  foo    two -1.509059 -0.494929\cf6 \strokec6 \
+\cf11 \strokec11 3  bar  three -1.135632  1.071804\cf6 \strokec6 \
+\cf11 \strokec11 4  foo    two  1.212112  0.721555\cf6 \strokec6 \
+\cf11 \strokec11 5  bar    two -0.173215 -0.706771\cf6 \strokec6 \
+\cf11 \strokec11 6  foo    one  0.119209 -1.039575\cf6 \strokec6 \
+\cf11 \strokec11 7  foo  three -1.044236  0.271860\cf6 \strokec6 \
+\pard\tx720\pardeftab720\sl360\partightenfactor0
+
+\f0\b\fs32 \cf2 \cb3 \strokec2 \
+\
+\pard\pardeftab720\sl360\sa240\partightenfactor0
+\cf2 2. What is database normalization? Why is it important in database theory? For each normal form below provide an example with data in table form and the rules for each normal form.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl360\sa240\partightenfactor0
+\ls2\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8259 	}
+\b0 Database normalization is the process of restructuring a relational database avoid data redundancy and improve the integrity of the data. Essentially, the idea is to keep each specific table of information tied to one specific topic. The website essential sql states that a spreadsheet containing information about sales people and customers will serve several purposes and can be broken down into the different purposes. By including normalization, you will reduce the need to use only one tables and duplicate data that is contained within the database. The way that the sorting of data and tables is created, is known as database normalization. There are three different forms of normalization and can prevent the modifications of database and the issues that would arise with such modifications. The examples of each form are below. When building a database, normalization is very important, but should not be overused. It is mentioned by essentialsql that over-normalizing a database can be a very possible thing and should not always be done. In fact, there are many times when a database may not need to be normalized. Sometimes, databases may be normalized but when the query has been sent, it might make sense to temporarily denormalize the data before it is sent to the view/user. 
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl360\partightenfactor0
+\ls3\ilvl0\cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 What is first order normalization?\'a0\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\sl360\partightenfactor0
+\ls3\ilvl1\cf2 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8259 	}
+\b0 The information is stored into a relational database table and each column contains an atomic value/s. There will not be any repeating groups or columns within first normal form databases.
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl360\partightenfactor0
+\ls3\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 What is second order normalization?\'a0\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\sl360\partightenfactor0
+\ls3\ilvl1\cf2 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8259 	}
+\b0 Second normal Form is similar, yet different than first normal form. This is usually more common and is when all of the database columns are going to depend on the table\'92s primary key. 
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl360\partightenfactor0
+\ls3\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 What is third order normalization?\
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\sl360\partightenfactor0
+\ls3\ilvl1
+\b0 \cf2 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8259 	}Third normal form is in the second normal form, yet all columns are not transitively dependent on the primary key. This website describes non-transitively as the meaning or relationship of data in the middle of the table being the same as it is across the whole. Being transitive means that if something applies at the beginning, means that it is going to apply to the middle and the end. An example of transitive data would be if 10 is greater than 5 and 5 is greater than 3, than 10 is going to be greater than 3. An example of transitive dependence is if a chart based on Body Mass Index (BMI). To determine if the person is overweight, you would need to rely on the BMI. If the BMI had not been given, than the weight determination cannot be made. If you were to include the person\'92s gender, this would erase the normalization. This is because the BMI does not directly rely upon the person\'92s gender. If gender was inputted to database, this would be a separate table, relying on the same user IDs as the other table. This way, the database would be in third normal form. If all were in the same table, relying upon independent user IDs, this would be known as first normal form of 1NF.\
+\pard\tx720\tx1440\pardeftab720\sl360\partightenfactor0
+\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\sl360\partightenfactor0
+
+\b \cf2 \cb3 3. What is a join in database theory? Why is a join important? What is the difference between an inner join and and outer join?\'a0\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl360\partightenfactor0
+\ls4\ilvl0\cf2 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8259 	}
+\b0 A join is similar to what the name definition describes it as. It is a simple instruction used to combine data from two different sets into one set. This methodology really only applies to RDBMS or Relational Database Management Systems. When using join, it relies on the table\'92s primary key and the foreign key of the database tables. When tables are joined, it might appear as if the combined tables are one table. There are four different types of joining (inner, outer, left, and right). Inner joins are based on matched data inside of the two tables that are evaluated with n equality condition that is going to be specific in a query. An inner join will only return a table of matching data from both parent tables. Outer joins are based on both matched and unmatched data. An outer join can further divide into a left-outer join, right-outer join, and full-outer join. The most common is the full-outer join. The full-outer join will attempt to build another table with matching data from each table, according to the keys. If a key does not exist in either of the parent tables, the joined table will return a null value. A join is extremely important when trying to build relational tables that are child tables of the parents, as well as querying data. This can also be used with more than two tables at a time as well. The minimum requirement for joining a table that is provided by studytonight.com is 
+\b n-1, 
+\b0 where 
+\b n 
+\b0 is the number of tables. A table can also join itself and this is known as a Self Join, but is less common than the other join methodologies. 
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\tx720\pardeftab720\sl360\partightenfactor0
+\cf2 \cb3 \
+\
+\
+References:\
+{\field{\*\fldinst{HYPERLINK "https://www.essentialsql.com/get-ready-to-learn-sql-11-database-third-normal-form-explained-in-simple-english/"}}{\fldrslt https://www.essentialsql.com/get-ready-to-learn-sql-11-database-third-normal-form-explained-in-simple-english/}}\
+\
+{\field{\*\fldinst{HYPERLINK "https://en.wikipedia.org/wiki/First_normal_form"}}{\fldrslt https://en.wikipedia.org/wiki/First_normal_form}}\
+\
+{\field{\*\fldinst{HYPERLINK "https://www.essentialsql.com/get-ready-to-learn-sql-database-normalization-explained-in-simple-english/"}}{\fldrslt https://www.essentialsql.com/get-ready-to-learn-sql-database-normalization-explained-in-simple-english/}}\
+\
+{\field{\*\fldinst{HYPERLINK "https://www.1keydata.com/database-normalization/third-normal-form-3nf.php"}}{\fldrslt https://www.1keydata.com/database-normalization/third-normal-form-3nf.php}}\
+\
+{\field{\*\fldinst{HYPERLINK "https://www.khanacademy.org/math/ap-statistics/density-curves-normal-distribution-ap/measuring-position/v/ck12-org-normal-distribution-problems-z-score"}}{\fldrslt https://www.khanacademy.org/math/ap-statistics/density-curves-normal-distribution-ap/measuring-position/v/ck12-org-normal-distribution-problems-z-score}}\
+\
+{\field{\*\fldinst{HYPERLINK "http://www.sql-join.com/"}}{\fldrslt http://www.sql-join.com/}}\
+\
+{\field{\*\fldinst{HYPERLINK "https://www.studytonight.com/dbms/joining-in-sql.php#"}}{\fldrslt https://www.studytonight.com/dbms/joining-in-sql.php#}}}
