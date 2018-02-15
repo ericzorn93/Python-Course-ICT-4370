@@ -31,8 +31,8 @@
       <file leaf-file-name="stocks_information.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tutor_mod7/stocks_information.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="63" lean-forward="false" selection-start-line="32" selection-start-column="63" selection-end-line="32" selection-end-column="63" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -41,17 +41,19 @@
       <file leaf-file-name="Eric_Zorn_mod7_primary_week7.1.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/second_final/Eric_Zorn_mod7_primary_week7.1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="91">
-              <caret line="452" column="45" lean-forward="true" selection-start-line="452" selection-start-column="45" selection-end-line="452" selection-end-column="45" />
+            <state relative-caret-position="45">
+              <caret line="454" column="45" lean-forward="false" selection-start-line="454" selection-start-column="45" selection-end-line="454" selection-end-column="45" />
               <folding>
-                <marker date="1518494295000" expanded="true" signature="436:693" ph="CREATE TABLE... investors" />
-                <marker date="1518494295000" expanded="true" signature="744:1026" ph="CREATE TABLE... stocks" />
-                <marker date="1518494295000" expanded="true" signature="1084:1351" ph="CREATE TABLE... bonds" />
-                <marker date="1518494295000" expanded="true" signature="1673:1744" ph="INSERT INTO investors... " />
-                <marker date="1518494295000" expanded="true" signature="3932:3998" ph="INSERT INTO stocks... " />
-                <marker date="1518494295000" expanded="true" signature="5966:6026" ph="INSERT INTO bonds... " />
-                <marker date="1518494295000" expanded="true" signature="9653:9673" ph="SELECT * FRO... stocks" />
-                <marker date="1518494295000" expanded="true" signature="11285:11353" ph="INSERT INTO stocks... " />
+                <marker date="1518576976000" expanded="true" signature="436:693" ph="CREATE TABLE... investors" />
+                <marker date="1518576976000" expanded="true" signature="744:1026" ph="CREATE TABLE... stocks" />
+                <marker date="1518576976000" expanded="true" signature="1084:1351" ph="CREATE TABLE... bonds" />
+                <marker date="1518576976000" expanded="true" signature="1673:1744" ph="INSERT INTO investors... " />
+                <marker date="1518576976000" expanded="true" signature="3933:3999" ph="INSERT INTO stocks... " />
+                <marker date="1518576976000" expanded="true" signature="5967:6027" ph="INSERT INTO bonds... " />
+                <marker date="1518576976000" expanded="true" signature="8325:8393" ph="INSERT INTO stocks... " />
+                <marker date="1518576976000" expanded="true" signature="9680:9700" ph="SELECT * FRO... stocks" />
+                <marker date="1518576976000" expanded="true" signature="11312:11380" ph="INSERT INTO stocks... " />
+                <marker date="1518576976000" expanded="true" signature="17328:17348" ph="SELECT * FRO... stocks" />
               </folding>
             </state>
           </provider>
@@ -174,7 +176,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -191,6 +192,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -307,7 +309,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3253521" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32816902" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38193202" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38908765" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -336,6 +338,82 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/tutor_mod7/stocks_information.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/second_final/Eric_Zorn_mod7_primary_week7.1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6780">
+          <caret line="452" column="45" lean-forward="true" selection-start-line="452" selection-start-column="45" selection-end-line="452" selection-end-column="45" />
+          <folding>
+            <marker date="1518576976000" expanded="true" signature="436:693" ph="CREATE TABLE... investors" />
+            <marker date="1518576976000" expanded="true" signature="744:1026" ph="CREATE TABLE... stocks" />
+            <marker date="1518576976000" expanded="true" signature="1084:1351" ph="CREATE TABLE... bonds" />
+            <marker date="1518576976000" expanded="true" signature="1673:1744" ph="INSERT INTO investors... " />
+            <marker date="1518576976000" expanded="true" signature="3933:3999" ph="INSERT INTO stocks... " />
+            <marker date="1518576976000" expanded="true" signature="5967:6027" ph="INSERT INTO bonds... " />
+            <marker date="1518576976000" expanded="true" signature="8325:8393" ph="INSERT INTO stocks... " />
+            <marker date="1518576976000" expanded="true" signature="9680:9700" ph="SELECT * FRO... stocks" />
+            <marker date="1518576976000" expanded="true" signature="11312:11380" ph="INSERT INTO stocks... " />
+            <marker date="1518576976000" expanded="true" signature="17328:17348" ph="SELECT * FRO... stocks" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/second_final/Lesson7_Data_Stocks.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tutor_mod7/Eric_Zorn_mod7_classes_week7.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1530">
+          <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tutor_mod7/Eric_Zorn_mod7_primary_week7.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6930">
+          <caret line="465" column="35" lean-forward="false" selection-start-line="465" selection-start-column="35" selection-end-line="465" selection-end-column="35" />
+          <folding>
+            <element signature="e#107#121#0" expanded="true" />
+            <marker date="1518465240382" expanded="true" signature="1286:1543" ph="CREATE TABLE... investors" />
+            <marker date="1518465240382" expanded="true" signature="1594:1876" ph="CREATE TABLE... stocks" />
+            <marker date="1518465240382" expanded="true" signature="1934:2201" ph="CREATE TABLE... bonds" />
+            <marker date="1518465240382" expanded="true" signature="2466:2537" ph="INSERT INTO investors... " />
+            <marker date="1518465240382" expanded="true" signature="2800:2871" ph="INSERT INTO investors... " />
+            <marker date="1518465240382" expanded="true" signature="3508:3568" ph="INSERT INTO bonds... " />
+            <marker date="1518465240382" expanded="true" signature="3907:3975" ph="INSERT INTO stocks... " />
+            <marker date="1518465240382" expanded="true" signature="4192:4260" ph="INSERT INTO stocks... " />
+            <marker date="1518465240382" expanded="true" signature="4478:4546" ph="INSERT INTO stocks... " />
+            <marker date="1518465240382" expanded="true" signature="4768:4836" ph="INSERT INTO stocks... " />
+            <marker date="1518465240382" expanded="true" signature="5045:5113" ph="INSERT INTO stocks... " />
+            <marker date="1518465240382" expanded="true" signature="5315:5383" ph="INSERT INTO stocks... " />
+            <marker date="1518465240382" expanded="true" signature="5764:5832" ph="INSERT INTO stocks... " />
+            <marker date="1518465240382" expanded="true" signature="7035:7055" ph="SELECT * FRO... stocks" />
+            <marker date="1518465240382" expanded="true" signature="8470:8538" ph="INSERT INTO stocks... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tutor_mod7/additional.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="33" lean-forward="false" selection-start-line="0" selection-start-column="33" selection-end-line="0" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tutor_mod7/stocks_information.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -560,8 +638,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tutor_mod7/stocks_information.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="63" lean-forward="false" selection-start-line="32" selection-start-column="63" selection-end-line="32" selection-end-column="63" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -576,17 +654,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/second_final/Eric_Zorn_mod7_primary_week7.1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="452" column="45" lean-forward="true" selection-start-line="452" selection-start-column="45" selection-end-line="452" selection-end-column="45" />
+        <state relative-caret-position="45">
+          <caret line="454" column="45" lean-forward="false" selection-start-line="454" selection-start-column="45" selection-end-line="454" selection-end-column="45" />
           <folding>
-            <marker date="1518494295000" expanded="true" signature="436:693" ph="CREATE TABLE... investors" />
-            <marker date="1518494295000" expanded="true" signature="744:1026" ph="CREATE TABLE... stocks" />
-            <marker date="1518494295000" expanded="true" signature="1084:1351" ph="CREATE TABLE... bonds" />
-            <marker date="1518494295000" expanded="true" signature="1673:1744" ph="INSERT INTO investors... " />
-            <marker date="1518494295000" expanded="true" signature="3932:3998" ph="INSERT INTO stocks... " />
-            <marker date="1518494295000" expanded="true" signature="5966:6026" ph="INSERT INTO bonds... " />
-            <marker date="1518494295000" expanded="true" signature="9653:9673" ph="SELECT * FRO... stocks" />
-            <marker date="1518494295000" expanded="true" signature="11285:11353" ph="INSERT INTO stocks... " />
+            <marker date="1518576976000" expanded="true" signature="436:693" ph="CREATE TABLE... investors" />
+            <marker date="1518576976000" expanded="true" signature="744:1026" ph="CREATE TABLE... stocks" />
+            <marker date="1518576976000" expanded="true" signature="1084:1351" ph="CREATE TABLE... bonds" />
+            <marker date="1518576976000" expanded="true" signature="1673:1744" ph="INSERT INTO investors... " />
+            <marker date="1518576976000" expanded="true" signature="3933:3999" ph="INSERT INTO stocks... " />
+            <marker date="1518576976000" expanded="true" signature="5967:6027" ph="INSERT INTO bonds... " />
+            <marker date="1518576976000" expanded="true" signature="8325:8393" ph="INSERT INTO stocks... " />
+            <marker date="1518576976000" expanded="true" signature="9680:9700" ph="SELECT * FRO... stocks" />
+            <marker date="1518576976000" expanded="true" signature="11312:11380" ph="INSERT INTO stocks... " />
+            <marker date="1518576976000" expanded="true" signature="17328:17348" ph="SELECT * FRO... stocks" />
           </folding>
         </state>
       </provider>

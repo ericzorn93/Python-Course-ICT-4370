@@ -20,18 +20,6 @@ def code_run():
     # Assigns User Bonds for Bob Smith
     bob_smith_bond = Bonds("GT2:GOV", 100.02, 100.05, 200, 1.38, 1.35)
 
-    # Table Titles
-    titles = (
-        "ID",
-        "Symbol",
-        "# Shares",
-        "Purchase",
-        "Current",
-        "Earn/Loss",
-        "Purchase Date",
-        "Yearly Earning/Loss"
-    )
-
 
     with open('Lesson7_Data_Bonds.csv', 'r') as file:
         info = csv.reader(file)
@@ -39,11 +27,9 @@ def code_run():
         # Code from Additional.py can be added here if needed
 
     """ Database Connections Using SQLite3"""
-
     # Connect to Database and Create Tables
     databaseConn = "stock_info.db"
     conn = create_connection(databaseConn)
-
 
     create_investor_table = """
        CREATE TABLE
@@ -80,15 +66,13 @@ def code_run():
         );
             """
 
-
-
+    # Database Connections
     try:
         create_db_table(conn, create_investor_table)
         create_db_table(conn, create_stock_table)
         create_db_table(conn, create_bond_table)
-        """
-    
-        """
+
+
         # Insert User 1
         user_bob_db_insert = "INSERT INTO investors VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')".format(
             user_bob.id,
@@ -108,20 +92,17 @@ def code_run():
             user_steve.address,
             user_steve.phone_number
         )
-
-        conn = sqlite3.connect(databaseConn)
-        cursor = conn.cursor()
-    
     except:
-        pass
+        print("Error with creating insert statements")
 
     # Attempt Database Investor Important
     try:
         # Database Execution for Investors
-        cursor.execute(user_bob_db_insert)
-        cursor.execute(user_steve_db_insert)
+        conn = sqlite3.connect(databaseConn)
+        insert_db_data(conn, user_bob_db_insert)
+        insert_db_data(conn, user_steve_db_insert)
     except:
-        pass
+        print("Error inserting data into the database")
 
 
 
@@ -138,7 +119,7 @@ def code_run():
         # Insert Bonds Data
         insert_db_data(conn, user_steve__bonds__insert)
     except UnboundLocalError as err:
-        print(err)
+        print("125" + err)
 
 
     # Insert Stock Data
@@ -156,19 +137,15 @@ def code_run():
                 insert_db_data(conn, insert_data)
             except IndexError:
                 pass # Simple Error Handling
-    except NameError:
-        print("Stocks List has already been defined")
-
-
+    except NameError as err:
+        # print("{0} has already been defined".format(err))
+        pass
 
     file_name = 'stocks_information.txt'
     with open(file_name, 'w') as file:
         # Assigns Investor Class Inheritance for the User Bob Smith
         user_bob = Investor("Bob", "Smith", "123 Main Street", "212-342-9046")
         user_steve = Investor("Steve", "Jobs", "1 Infinite Loop", "800-692-7753")
-
-        # Assigns User Bonds for Bob Smith
-        bob_smith_bond = Bonds("GT2:GOV", 100.02, 100.05, 200, 1.38, 1.35)
 
         # Table Titles
         titles = (
@@ -198,10 +175,7 @@ def code_run():
         ibm = StockData(stocks_data[7][1], stocks_data[7][2], stocks_data[7][3], stocks_data[7][4], id=stocks_data[7][0])
         appl = StockData(stocks_data[8][1], stocks_data[8][2], stocks_data[8][3], stocks_data[8][4], id=stocks_data[8][0])
 
-
         stocks = [goog, msft, rds_a, aig, fb, m, f, ibm, appl]
-
-
         cursor = conn.cursor()
 
         # Error handling for Stock Query
@@ -222,8 +196,8 @@ def code_run():
                 except sqlite3.OperationalError:
                     print("This query has already been completed")
 
-        except sqlite3.IntegrityError:
-            print("The query has already been completed")
+        except sqlite3.IntegrityError as err:
+            # print("210: The query has already been completed")
             pass
 
 
@@ -411,7 +385,6 @@ def code_run():
             for title in titles:
                 open_file.write("{0:12} | ".format(title))
 
-
             # Write New Line
             open_file.write("\n\n")
             # Write Steve Jobs Stock Information
@@ -427,8 +400,6 @@ def code_run():
                 apple_dict["appl"]["earn_loss"],
                 apple_dict["appl"]["yearly_yield"],
             ))
-
-
         except ValueError as err:
             print(err)
 
