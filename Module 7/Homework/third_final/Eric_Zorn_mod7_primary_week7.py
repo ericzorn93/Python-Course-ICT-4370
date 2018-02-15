@@ -18,11 +18,21 @@ def code_run():
     user_steve = Investor("Steve", "Jobs", "1 Infinite Loop", "800-692-7753")
 
     # Assigns User Bonds for Bob Smith
-    bob_smith_bond = Bonds("GT2:GOV", 100.02, 100.05, 200, 1.38, 1.35)
+    with open('Lesson7_Data_Bonds.csv', 'r') as bonds_file:
+        info = csv.reader(bonds_file)
+        bond_info_list = list(info)
+        bob_smith_bond = Bonds(
+            bond_info_list[1][0],
+            bond_info_list[1][2],
+            bond_info_list[1][3],
+            bond_info_list[1][1],
+            bond_info_list[1][5],
+            bond_info_list[1][6]
+        )
 
 
-    with open('Lesson7_Data_Bonds.csv', 'r') as file:
-        info = csv.reader(file)
+    # with open('Lesson7_Data_Bonds.csv', 'r') as file:
+    #     info = csv.reader(file)
 
         # Code from Additional.py can be added here if needed
 
@@ -72,7 +82,6 @@ def code_run():
         create_db_table(conn, create_stock_table)
         create_db_table(conn, create_bond_table)
 
-
         # Insert User 1
         user_bob_db_insert = "INSERT INTO investors VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')".format(
             user_bob.id,
@@ -92,19 +101,15 @@ def code_run():
             user_steve.address,
             user_steve.phone_number
         )
-    except:
-        print("Error with creating insert statements")
 
     # Attempt Database Investor Important
-    try:
         # Database Execution for Investors
         conn = sqlite3.connect(databaseConn)
         insert_db_data(conn, user_bob_db_insert)
         insert_db_data(conn, user_steve_db_insert)
-    except:
+
+    except sqlite3.IntegrityError:
         print("Error inserting data into the database")
-
-
 
     # Database Insertion for Bonds from User Bob Smith
     try:
@@ -120,26 +125,6 @@ def code_run():
         insert_db_data(conn, user_steve__bonds__insert)
     except UnboundLocalError as err:
         print("125" + err)
-
-
-    # Insert Stock Data
-    try:
-        for val in stocks_list:
-            try:
-                insert_data = "INSERT INTO stocks VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')".format(
-                    val.id,
-                    val.symbol,
-                    val.shares_owned,
-                    val.purchase_price,
-                    val.current_price,
-                    val.purchase_date
-                )
-                insert_db_data(conn, insert_data)
-            except IndexError:
-                pass # Simple Error Handling
-    except NameError as err:
-        # print("{0} has already been defined".format(err))
-        pass
 
     file_name = 'stocks_information.txt'
     with open(file_name, 'w') as file:
@@ -193,6 +178,7 @@ def code_run():
                 try:
                     cursor.execute(query)
                     conn.commit()
+                    cursor.close()
                 except sqlite3.OperationalError:
                     print("This query has already been completed")
 
@@ -350,29 +336,34 @@ def code_run():
             except ValueError:
                 print("Unknown format of value to be written to stocks_information.txt file")
 
-
-
     # Assign Bond Information
     with open('Lesson7_Data_Bonds.csv', 'r') as bonds_file_csv:
         # Assigns User Bonds for Bob Smith
         reader = csv.reader(bonds_file_csv)
         bond_list = list(reader)
-        bob_smith_bond = Bonds(bond_list[1][0], bond_list[1][2], bond_list[1][3], bond_list[1][4], bond_list[1][5], bond_list[1][6])
+        bob_smith_bond = Bonds(
+            bond_list[1][0],
+            bond_list[1][2],
+            bond_list[1][3],
+            bond_list[1][4],
+            bond_list[1][5],
+            bond_list[1][6]
+        )
 
     with open('stocks_information.txt', 'a') as open_file:
         try:
             open_file.write("\n\n")
             open_file.write("{0}'s Bond Information\n----------------------\n".format(user_bob.full_name))
             open_file.write(
-                "ID: {0}\nSymbol: {1}\nPurchase Price: ${2}\nCurrent Price: ${3}\nQuantity: {4}\nCoupon: {5}\nYield: {6}%\nPurchase Date: {7}".format(
+                "ID: {0}\nSymbol: {1}\nPurchase Price: ${2}\nCurrent Price: ${3}\nCoupon: {4}\nYield: {5}%\nPurchase Date: {6}\nShares Owned: {7}".format(
                     bob_smith_bond.id,
                     bob_smith_bond.symbol,
                     bob_smith_bond.purchase_price,
                     bob_smith_bond.current_price,
-                    bob_smith_bond.quantity,
                     bob_smith_bond.coupon,
                     bob_smith_bond.yield_amt_pct,
-                    bob_smith_bond.purchase_date
+                    bob_smith_bond.purchase_date,
+                    bob_smith_bond.shares_owned
                 )
             )
 
@@ -407,6 +398,7 @@ def code_run():
 # Main Function
 def main():
     code_run()
+    print("\nView External Stocks_Information.txt File for complete table of information.")
 
 
 # Main Function Call

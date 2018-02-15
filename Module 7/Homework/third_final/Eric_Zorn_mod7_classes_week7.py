@@ -4,9 +4,7 @@
     This module is the main class module and  contains all of the classes, attributes and methods that are initiated
     and assigned in the other Python Module.
 """
-
 import datetime as dt
-
 
 
 class ID_counter():
@@ -42,10 +40,7 @@ class Investor(object):
         self.address = address
         self.phone_number = phone_number
         self.id = ID_counter.get_new_investor_id()
-        print('Investor ID =', self.id, '  for first_name', first_name)
-
-
-
+        print('Investor ID =', self.id, ' for ', first_name)
 
 
 # Stock Data Class
@@ -111,8 +106,6 @@ class StockData(object):
             return i
 
 
-
-
 # Calculate Bonds for Different Stocks
 class Bonds(StockData):
     """
@@ -122,7 +115,7 @@ class Bonds(StockData):
     a simple method as well which prints the coupon and yield amount in a formatted string.
     """
     def __init__(self, symbol, purchase_price, current_price, quantity, coupon, yield_amt_pct):
-        super().__init__(symbol, 0, purchase_price, current_price)
+        super().__init__(symbol, 200, purchase_price, current_price)
         self.quantity = quantity
         self.coupon = coupon
         self.yield_amt_pct = yield_amt_pct

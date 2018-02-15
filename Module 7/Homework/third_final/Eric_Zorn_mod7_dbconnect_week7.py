@@ -5,6 +5,7 @@ Eric Zorn Module 7 Week 7 - 2/5/18 - Connecting and Using SQLite Databases
 import sqlite3
 from sqlite3 import Error
 
+
 def create_connection(db_file):
     """
     Creates a connection to SQLite3 Database (Not MySQL)
@@ -47,7 +48,8 @@ def insert_db_data(conn, query):
         conn.commit()
         conn.close()
     except Error as e:
-        print(e)
+        if e == "UNIQUE constraint failed":
+            pass
 
     return None
 
