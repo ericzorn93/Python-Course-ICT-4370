@@ -62,8 +62,35 @@ def Bonds(request):
         "bond_one_purchase_price": 100.02,
         "bond_one_current_price": 100.05,
         "title": title,
+        "home_page": "http://127.0.0.1:8000/",
+        "bonds_page": "http://127.0.0.1:8000/bonds",
+        "investors_page": "http://127.0.0.1:8000/investors",
     }
 
     conn.close()
 
     return render(request, 'bonds/bonds.html', context)
+
+
+# Investors View
+def Investors(request):
+    title = "ICT 4370 Stock Information"
+    investor_query = "SELECT * FROM investors"
+
+    conn = sqlite3.connect('stock_info.db')
+    cursor = conn.cursor()
+
+    cursor.execute(investor_query)
+    return_data_investor = cursor.fetchall()
+
+    context = {
+       "investor_one": return_data_investor[0],
+       "investor_two": return_data_investor[1],
+       "home_page": "http://127.0.0.1:8000/",
+       "bonds_page": "http://127.0.0.1:8000/bonds",
+       "investors_page": "http://127.0.0.1:8000/investors",
+    }
+
+    conn.close()
+
+    return render(request, 'investors/investors.html', context)
