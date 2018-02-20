@@ -74,7 +74,7 @@ def Bonds(request):
 
 # Investors View
 def Investors(request):
-    title = "ICT 4370 Stock Information"
+    title = "ICT 4370 Investors Information"
     investor_query = "SELECT * FROM investors"
 
     conn = sqlite3.connect('stock_info.db')
@@ -89,6 +89,7 @@ def Investors(request):
        "home_page": "http://127.0.0.1:8000/",
        "bonds_page": "http://127.0.0.1:8000/bonds",
        "investors_page": "http://127.0.0.1:8000/investors",
+       "title": title,
     }
 
     conn.close()
