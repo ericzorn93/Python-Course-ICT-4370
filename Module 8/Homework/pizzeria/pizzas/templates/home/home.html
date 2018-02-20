@@ -2,6 +2,36 @@
 
 {% block body %}
 
-<h1 id="title">Hello</h1>
+<div class="container">
+
+    <br>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-3">Welcome to Eric Zorn's Pizzeria</h1>
+            <hr class="my-4">
+            <h4 class="lead">{{ intro_description }}</h4>
+        </div>
+    </div>
+
+    <br>
+
+    <form>
+        <div class="form-group">
+            <label for="fullName">{{ names }}</label>
+            <input type="text" class="form-control" id="fullName" placeholder="{{ names }}" name="full_name">
+        </div>
+        <div class="form-group">
+            <label for="orders">{{ orders }}</label>
+            <input type="text" class="form-control" id="orders" placeholder="{{ orders }}" name="pizza_order">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
 
 {% endblock %}
+
+
+
+

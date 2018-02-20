@@ -20,5 +20,7 @@ from django.conf.urls import url, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pizzas.urls')),
-    path('about/', include('pizzas.urls')),
+    path('menu', include('pizzas.urls')),
+    path('about', include('pizzas.urls')),
+    path('orders', include('pizzas.urls')),
 ]
