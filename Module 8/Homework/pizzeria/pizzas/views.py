@@ -18,7 +18,7 @@ def homepage(request):
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
-            task = form_second.save(commit=True)
+            task = form_second.save(commit=False)
             task.usern = request.user
             task.save()
             return HttpResponseRedirect('/orders/')
