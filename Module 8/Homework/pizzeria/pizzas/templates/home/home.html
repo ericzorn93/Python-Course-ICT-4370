@@ -16,7 +16,8 @@
 
     <br>
 
-    <form>
+    <form action="/orders/" method="post">
+        {% csrf_token %}
         <div class="form-group">
             <label for="fullName">{{ names }}</label>
             <input type="text" class="form-control" id="fullName" placeholder="{{ names }}" name="full_name">
@@ -26,6 +27,22 @@
             <input type="text" class="form-control" id="orders" placeholder="{{ orders }}" name="pizza_order">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+    <br><br>
+
+
+    <!--<form action="/orders/" method="post" class="form-group">-->
+        <!--{% csrf_token %}-->
+        <!--{{ form }}-->
+        <!--<input type="submit" value="Submit" class="btn btn-danger" />-->
+    <!--</form>-->
+
+    <form action="/orders/" method="post" class="form-group">
+        {% csrf_token %}
+        {{ form_second }}
+        <input type="submit" value="Submit" class="btn btn-primary" />
     </form>
 
 </div>
