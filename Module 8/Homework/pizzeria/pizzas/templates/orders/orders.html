@@ -6,6 +6,15 @@
 <br>
 <div class="container">
     <h1>Visible Orders</h1>
+
+    <br>
+
+    <ul class="list-group header" style="list-style: none">
+        {% for topping in all_toppings %}
+            <br>
+            <li><a class="list-group-item list-group-item-action active" href="{{ topping.pizza }}">{{ topping.pizza }}</a></li>
+        {% endfor %}
+    </ul>
 </div>
 
 {% endblock %}

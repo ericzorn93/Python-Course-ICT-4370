@@ -1,15 +1,15 @@
 from django import forms
+from django.forms import ModelForm
 from .models import Pizza, Toppings
 
 
-class FullName(forms.Form):
-    # name = forms.CharField(label='Please Enter Your Full Name', max_length=100)
-
+class FullNameForm(ModelForm):
     class Meta:
         model = Pizza
-        fields = ('name')
+        fields = ['name']
 
 
-class PizzaType(forms.Form):
-    name = forms.CharField(label='Please Enter Your Full Name', max_length=100)
-    topping = forms.CharField(label='Please Enter the kind of pizza of topping you would like', max_length=200)
+class ToppingForm(ModelForm):
+    class Meta:
+        model = Toppings
+        fields = ['pizza', 'name']

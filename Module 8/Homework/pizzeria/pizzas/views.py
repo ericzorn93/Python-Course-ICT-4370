@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from . import models
+from pizzas.models import Pizza, Toppings
 from . import forms
 
 
@@ -8,32 +8,24 @@ from . import forms
 
 # Homepage View
 def homepage(request):
+    """Renders Homepage and Correct Django Forms, rendered from models"""
 
-    if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        form = forms.FullName(request.POST)
-        form_second = forms.PizzaType(request.POST)
-        # check whether it's valid:
-        if form_second.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-            task = form_second.save(commit=False)
-            task.usern = request.user
-            task.save()
-            return HttpResponseRedirect('/orders/')
+    # Pizza Names
+    pizza_name_form = forms.FullNameForm(request.POST)
+    if pizza_name_form.is_valid():
+        pizza_name_form.save()
 
-        # if a GET (or any other method) we'll create a blank form
-    else:
-        form = forms.FullName()
-        form_second = forms.PizzaType()
+    # Topping Names
+    toppings_form = forms.ToppingForm(request.POST)
+    if toppings_form.is_valid():
+        toppings_form.save()
 
     context = {
         "orders": "Please Enter Your Order Here:",
         "names": "Please Enter Your Full Name Here:",
         "intro_description": "We Hope Your Day is Full of cheese, sauce, and good times!",
-        "form": form,
-        "form_second": form_second
+        "pizza_name_form": pizza_name_form,
+        "toppings_form": toppings_form,
     }
 
     return render(request, 'home/home.html', context)
@@ -41,17 +33,51 @@ def homepage(request):
 
 # Orders View
 def orders(request):
-    context = {}
+    all_toppings = Toppings.objects.all()
+    all_names = Pizza.objects.all()
+    context = {
+        "all_toppings": all_toppings,
+        "all_names": all_names,
+    }
+
     return render(request, 'orders/orders.html', context)
 
 
 # Menu View
 def menu(request):
-    context = {}
+    """Displays Menu Items from DB to the UI"""
+
+    context = {
+        "menu_items": [
+            "Custom Pizza Toppings",
+            "Pepperoni",
+            "Sausage",
+            "Philly Cheese Steak",
+            "Chicken Bacon Philly",
+            "The Works",
+            "Spicy Italian Pepperoni",
+            "Hawaiian Chicken",
+            "Spinach Carbonara",
+            "Extra Veggies",
+            "Cheese Pizza",
+            "Original Breadsticks",
+            "Cheesy Garlic Bread",
+            "BBQ Wings",
+            "Hot Wings",
+            "Chocolate Brownie",
+            "Chocolate Chip Cookie",
+            "Sugar Cookie",
+            "Coca-Cola",
+            "Mountain Dew",
+            "Fanta",
+            "Dasani Water"
+        ]
+    }
     return render(request, 'menu/menu.html', context)
 
 
 # About View
 def about(request):
+    """UI View of the About Page"""
     context = {}
     return render(request, 'about/about.html', context)

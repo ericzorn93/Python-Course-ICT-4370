@@ -8,5 +8,6 @@ class Pizza(models.Model):
 
 
 class Toppings(models.Model):
-    pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
+    # pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
+    pizza = models.CharField(max_length=100)
     name = models.CharField(max_length=50)
