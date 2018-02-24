@@ -52,7 +52,7 @@ def menu(request):
     """Displays Menu Items from DB to the UI"""
 
     context = {
-        "menu_items": [
+        "pizzas": [
             "Custom Pizza Toppings",
             "Pepperoni",
             "Sausage",
@@ -63,17 +63,20 @@ def menu(request):
             "Hawaiian Chicken",
             "Spinach Carbonara",
             "Extra Veggies",
-            "Cheese Pizza",
-            "Original Breadsticks",
+            "Cheese Pizza"
+            ],
+            "sides": ["Original Breadsticks",
             "Cheesy Garlic Bread",
             "BBQ Wings",
             "Hot Wings",
             "Chocolate Brownie",
             "Chocolate Chip Cookie",
             "Sugar Cookie",
-            "Coca-Cola",
+            ],
+            "drinks": ["Coca-Cola",
             "Mountain Dew",
             "Fanta",
+            "Pepsi",
             "Dasani Water"
         ]
     }
@@ -144,3 +147,9 @@ def Profile(request):
 def order_info(request):
     context = {}
     return render(request, 'order_info.html', context)
+
+
+# Specific Order
+def specific_order(request):
+    context = {"specific_order": "testing"}
+    return render(request, 'orders/specific_order.html', context)

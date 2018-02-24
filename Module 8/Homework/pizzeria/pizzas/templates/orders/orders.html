@@ -5,7 +5,7 @@
 
 <br>
 <div class="container">
-    <h1>Visible Orders</h1>
+    <h1>Current Orders</h1>
 
     <br>
 
@@ -13,7 +13,9 @@
     <ul class="list-group header" style="list-style: none">
         {% for topping in all_toppings %}
             <br>
-            <li><a class="list-group-item list-group-item-action active" href="{{ topping.pizza }}">{{ topping.pizza }}</a></li>
+            <li><a class="list-group-item list-group-item-action active" href="/orders/{{ topping.pk }}/">Order: {{ topping.pk }} | Order: {{ topping.pizza }}</a></li>
+            <br>
+            <b><p>Order {{ topping.pk }} From: {{ topping.name }}</p></b>
         {% endfor %}
     </ul>
     {% endblock %}
