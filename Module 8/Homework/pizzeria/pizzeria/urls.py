@@ -16,11 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('login', auth_views.login),
     path('', include('pizzas.urls')),
     path('menu', include('pizzas.urls')),
     path('about', include('pizzas.urls')),
     path('orders', include('pizzas.urls')),
+    path('create', include('pizzas.urls')),
+    path('order_info', include('pizzas.urls')),
+    # path('home', include('pizzas.urls')),
 ]

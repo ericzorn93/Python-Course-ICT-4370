@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css" type="text/css">
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Eric Zorn's Pizzeria</a>
+</nav>
+
+
+<br><br>
+<div class="container">
+    <h1><b>Login Here</b></h1>
+
+    <form method="POST" class="form-group">
+        {% csrf_token %}
+        <p>
+            <label>Username</label>
+            <input type="text" name="username" class="form-control" placeholder="Please Enter Your Username">
+        </p>
+        <p>
+            <label>Password</label>
+            <input type="password" name="password" class="form-control" placeholder="Please Enter Your Password">
+        </p>
+        <button type="submit" class="btn btn-success">Login</button>
+    </form>
+    <p><a href="/create/">Click Here To Register</a></p>
+</div>

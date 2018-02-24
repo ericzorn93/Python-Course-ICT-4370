@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css" type="text/css"
+      xmlns="http://www.w3.org/1999/html">
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Eric Zorn's Pizzeria</a>
+</nav>
+
+
+<br><br>
+<div class="container">
+    <h1><b>Please Create an Account Here</b></h1>
+    <br>
+    <form method="post" class="form-group">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+    <br>
+    <strong><em id="reloadOutput" style="color: white"></em></strong><span style="margin-left: 10%"><a href="/"><button class="btn btn-primary">Please Click Here to Login</button></a></span>
+
+</div>
+
+
+{# Load JavaScript PizzaLogin #}
+{% load static %}
+<script src="{% static 'js/create_user.js' %}"></script>
+
+
